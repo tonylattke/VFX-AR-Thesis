@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="VFX_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jnY-H3-OlL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L99-Ov-Rtp">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Mnl-1N-bLF" appends="YES" id="v7P-2p-Vse"/>
+                                </connections>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvu-la-LA7">
+                                <rect key="frame" x="16" y="78" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="save"/>
+                                <connections>
+                                    <action selector="saveButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="F7u-Lx-Yds"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G7-1y-VpX">
+                                <rect key="frame" x="313" y="78" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="resetButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="Jkt-IB-rof"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCg-Qq-Axb">
+                                <rect key="frame" x="16" y="78" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="read"/>
+                                <connections>
+                                    <action selector="readButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="2tq-B3-Iwn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d5-Ng-4RJ">
+                                <rect key="frame" x="115" y="602" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="check"/>
+                                <connections>
+                                    <action selector="checkBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="9JN-Tj-e9X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-6Z-WXI">
+                                <rect key="frame" x="201" y="602" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="uncheck"/>
+                                <connections>
+                                    <action selector="uncheckBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="UHg-Lz-MVn"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-iI-GPZ">
+                                <rect key="frame" x="91" y="80" width="194" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="idle"/>
+                                    <segment title="creation"/>
+                                    <segment title="relocate"/>
+                                </segments>
+                                <connections>
+                                    <action selector="apModeControlChangeValueHandle:" destination="BV1-FR-VrT" eventType="valueChanged" id="fId-Jc-hk5"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8Zw-5M-dLr">
+                                <rect key="frame" x="375" y="64" width="240" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="3qG-Jd-unr"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="blue" indentationWidth="10" reuseIdentifier="cellOptions" id="7oX-f6-5I7">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7oX-f6-5I7" id="2El-40-ogh">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BV1-FR-VrT" id="pWq-gL-Sde"/>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="t7q-Hq-Rcm"/>
+                                </connections>
+                            </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t6n-Jm-t1F">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="VFX &amp; AR" id="1j2-hj-JS8"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-0q-Js8">
+                                <rect key="frame" x="-240" y="64" width="240" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="CHb-KS-kgX"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellEffects" id="WrR-4H-ufT">
+                                        <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WrR-4H-ufT" id="VGq-qp-nyG">
+                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BV1-FR-VrT" id="fRb-PH-9YE"/>
+                                    <outlet property="delegate" destination="BV1-FR-VrT" id="xr3-cd-r1I"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="t6n-Jm-t1F" firstAttribute="top" secondItem="9rX-kO-ZMk" secondAttribute="top" id="C12-I9-YH5"/>
+                            <constraint firstItem="AJf-0q-Js8" firstAttribute="top" secondItem="t6n-Jm-t1F" secondAttribute="bottom" id="Ejc-wi-MI5"/>
+                            <constraint firstItem="9rX-kO-ZMk" firstAttribute="trailing" secondItem="8Zw-5M-dLr" secondAttribute="trailing" constant="-240" id="Gkf-eK-vTy"/>
+                            <constraint firstItem="8Zw-5M-dLr" firstAttribute="bottom" secondItem="9rX-kO-ZMk" secondAttribute="bottom" id="LiC-ci-zBm"/>
+                            <constraint firstItem="8Zw-5M-dLr" firstAttribute="top" secondItem="t6n-Jm-t1F" secondAttribute="bottom" id="Q8J-Qz-D5I"/>
+                            <constraint firstItem="AJf-0q-Js8" firstAttribute="bottom" secondItem="9rX-kO-ZMk" secondAttribute="bottom" id="jdB-GQ-TKs"/>
+                            <constraint firstItem="t6n-Jm-t1F" firstAttribute="trailing" secondItem="9rX-kO-ZMk" secondAttribute="trailing" id="nGS-kA-HCx"/>
+                            <constraint firstItem="AJf-0q-Js8" firstAttribute="leading" secondItem="9rX-kO-ZMk" secondAttribute="leading" constant="-240" id="vOZ-GT-J2D"/>
+                            <constraint firstItem="t6n-Jm-t1F" firstAttribute="leading" secondItem="9rX-kO-ZMk" secondAttribute="leading" id="w2I-1I-xdP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="9rX-kO-ZMk"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="i8u-fm-EZJ" appends="YES" id="WCa-FS-d10"/>
+                            <outletCollection property="gestureRecognizers" destination="bbV-kl-ev1" appends="YES" id="XFB-GW-R29"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="appModeControl" destination="fd6-iI-GPZ" id="S8P-hc-5f1"/>
+                        <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
+                        <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
+                        <outlet property="leadingConstraintLeft" destination="vOZ-GT-J2D" id="nTH-d6-5Wb"/>
+                        <outlet property="leadingConstraintRight" destination="Gkf-eK-vTy" id="y63-5r-kPc"/>
+                        <outlet property="letToRightGesture" destination="bbV-kl-ev1" id="c43-NM-UIM"/>
+                        <outlet property="readButton" destination="wCg-Qq-Axb" id="k4q-kh-t6Y"/>
+                        <outlet property="resetButton" destination="8G7-1y-VpX" id="wta-eA-ujP"/>
+                        <outlet property="rightToLeftGesture" destination="i8u-fm-EZJ" id="RZO-2z-4nl"/>
+                        <outlet property="saveButton" destination="xvu-la-LA7" id="LzM-w4-dzb"/>
+                        <outlet property="sceneView" destination="L99-Ov-Rtp" id="aMC-cb-Nie"/>
+                        <outlet property="settigsMenu" destination="8Zw-5M-dLr" id="2ud-TC-41s"/>
+                        <outlet property="statusBarLabel" destination="1j2-hj-JS8" id="X8l-zP-f0i"/>
+                        <outlet property="tapGesture" destination="Mnl-1N-bLF" id="WLP-Gw-xuT"/>
+                        <outlet property="uncheckBaseMarkButton" destination="jUN-6Z-WXI" id="Tjy-fO-fmU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="i8u-fm-EZJ">
+                    <rectEdge key="edges" right="YES"/>
+                    <connections>
+                        <action selector="rightToLeftGestureHandle:" destination="BV1-FR-VrT" id="4xB-6d-lLY"/>
+                        <outlet property="delegate" destination="BV1-FR-VrT" id="uGb-rT-hL6"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <screenEdgePanGestureRecognizer minimumNumberOfTouches="1" id="bbV-kl-ev1">
+                    <rectEdge key="edges" left="YES"/>
+                    <connections>
+                        <action selector="leftToRightGestureHandle:" destination="BV1-FR-VrT" id="rfh-i6-zPu"/>
+                        <outlet property="delegate" destination="BV1-FR-VrT" id="Wj0-Jd-HpD"/>
+                    </connections>
+                </screenEdgePanGestureRecognizer>
+                <tapGestureRecognizer id="Mnl-1N-bLF">
+                    <connections>
+                        <action selector="handleTapGesture:" destination="BV1-FR-VrT" id="ecV-5U-E6Q"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="32.833583208395808"/>
+        </scene>
+        <!--View ControllerARCL-->
+        <scene sceneID="aAn-R7-xA4">
+            <objects>
+                <viewController id="V5c-Pt-gb6" customClass="ViewControllerARCL" customModule="VFX_AR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9iI-0h-frr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="son-zp-wPT"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxa-2a-Ef7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="985" y="33"/>
+        </scene>
+    </scenes>
+</document>

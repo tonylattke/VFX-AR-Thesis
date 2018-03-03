@@ -1,0 +1,894 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2D3AB957DAD17593E0CFC1C5 /* Pods_VFX_AR.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8145630A4055024C530EAFE9 /* Pods_VFX_AR.framework */; };
+		38DAB94708076E19F77BBCEA /* Pods_VFX_ARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10967F665EE5EA28FA38F950 /* Pods_VFX_ARTests.framework */; };
+		8C1B7E01202B057E005D40E0 /* LUReferencePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E00202B057E005D40E0 /* LUReferencePosition.swift */; };
+		8C1B7E03202C6A1B005D40E0 /* Helpers+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */; };
+		8C1B7E06202CBAFC005D40E0 /* ViewController+LU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */; };
+		8C3F9D142017872F000FEEFA /* ViewController+ARPlanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */; };
+		8C3F9D162018E8FC000FEEFA /* LUCoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D152018E8FC000FEEFA /* LUCoders.swift */; };
+		8C3F9D182018E963000FEEFA /* ViewController+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */; };
+		8C4DE2851FE1E56200832EB3 /* ViewController+CL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */; };
+		8C4DE2871FE1EB9A00832EB3 /* LUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2861FE1EB9A00832EB3 /* LUScene.swift */; };
+		8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */; };
+		8C4DE28B1FE1EDE300832EB3 /* LUMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */; };
+		8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */; };
+		8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */; };
+		8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FB203C530200AD350D /* Helpers+Classes.swift */; };
+		8C8A75FE203C574100AD350D /* ViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FD203C574100AD350D /* ViewController+UI.swift */; };
+		8C8A7606204A121900AD350D /* ViewControllerARCL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A7605204A121900AD350D /* ViewControllerARCL.swift */; };
+		8CBE532920220A38004E5ECF /* LU3DBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE532820220A38004E5ECF /* LU3DBox.swift */; };
+		8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC537E1FC361C600EC410C /* AppDelegate.swift */; };
+		8CCC53811FC361C600EC410C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53801FC361C600EC410C /* art.scnassets */; };
+		8CCC53831FC361C600EC410C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53821FC361C600EC410C /* ViewController.swift */; };
+		8CCC53861FC361C600EC410C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53841FC361C600EC410C /* Main.storyboard */; };
+		8CCC53881FC361C600EC410C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53871FC361C600EC410C /* Assets.xcassets */; };
+		8CCC538B1FC361C600EC410C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53891FC361C600EC410C /* LaunchScreen.storyboard */; };
+		8CCC53961FC361C600EC410C /* VFX_ARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53951FC361C600EC410C /* VFX_ARTests.swift */; };
+		8CCC53A11FC361C600EC410C /* VFX_ARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53A01FC361C600EC410C /* VFX_ARUITests.swift */; };
+		8CCC53AF1FC39B4800EC410C /* ViewController+GesturesHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */; };
+		8CCC53B11FC39C1D00EC410C /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */; };
+		8CCC53B31FC39D2600EC410C /* ViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */; };
+		E3746D40F38A89C581331B92 /* Pods_VFX_ARUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E98CE799AE02D5E09FE1EC /* Pods_VFX_ARUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8CCC53921FC361C600EC410C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CCC53731FC361C600EC410C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CCC537A1FC361C600EC410C;
+			remoteInfo = "VFX-AR";
+		};
+		8CCC539D1FC361C600EC410C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8CCC53731FC361C600EC410C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8CCC537A1FC361C600EC410C;
+			remoteInfo = "VFX-AR";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0109B6DBEC3585CF5748C404 /* Pods-VFX-AR.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-AR.release.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR.release.xcconfig"; sourceTree = "<group>"; };
+		02B9A98E414A3A39B3B5B9A0 /* Pods-VFX-AR.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-AR.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR.debug.xcconfig"; sourceTree = "<group>"; };
+		10967F665EE5EA28FA38F950 /* Pods_VFX_ARTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VFX_ARTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2BA5ADBC315E76BA89A6B5B9 /* Pods-VFX-ARTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests.release.xcconfig"; sourceTree = "<group>"; };
+		69E98CE799AE02D5E09FE1EC /* Pods_VFX_ARUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VFX_ARUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8145630A4055024C530EAFE9 /* Pods_VFX_AR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VFX_AR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C1B7E00202B057E005D40E0 /* LUReferencePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUReferencePosition.swift; sourceTree = "<group>"; };
+		8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Functions.swift"; sourceTree = "<group>"; };
+		8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LU.swift"; sourceTree = "<group>"; };
+		8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARPlanes.swift"; sourceTree = "<group>"; };
+		8C3F9D152018E8FC000FEEFA /* LUCoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUCoders.swift; sourceTree = "<group>"; };
+		8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Buttons.swift"; sourceTree = "<group>"; };
+		8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CL.swift"; sourceTree = "<group>"; };
+		8C4DE2861FE1EB9A00832EB3 /* LUScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUScene.swift; sourceTree = "<group>"; };
+		8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUObject.swift; sourceTree = "<group>"; };
+		8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUMark.swift; sourceTree = "<group>"; };
+		8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUInteractivObject.swift; sourceTree = "<group>"; };
+		8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Extensions.swift"; sourceTree = "<group>"; };
+		8C8A75FB203C530200AD350D /* Helpers+Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Classes.swift"; sourceTree = "<group>"; };
+		8C8A75FD203C574100AD350D /* ViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UI.swift"; sourceTree = "<group>"; };
+		8C8A7605204A121900AD350D /* ViewControllerARCL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerARCL.swift; sourceTree = "<group>"; };
+		8CBE532820220A38004E5ECF /* LU3DBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LU3DBox.swift; sourceTree = "<group>"; };
+		8CCC537B1FC361C600EC410C /* VFX-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VFX-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCC537E1FC361C600EC410C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8CCC53801FC361C600EC410C /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		8CCC53821FC361C600EC410C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8CCC53851FC361C600EC410C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8CCC53871FC361C600EC410C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8CCC538A1FC361C600EC410C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8CCC538C1FC361C600EC410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCC53911FC361C600EC410C /* VFX-ARTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VFX-ARTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCC53951FC361C600EC410C /* VFX_ARTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFX_ARTests.swift; sourceTree = "<group>"; };
+		8CCC53971FC361C600EC410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCC539C1FC361C600EC410C /* VFX-ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VFX-ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCC53A01FC361C600EC410C /* VFX_ARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFX_ARUITests.swift; sourceTree = "<group>"; };
+		8CCC53A21FC361C600EC410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+GesturesHandle.swift"; sourceTree = "<group>"; };
+		8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
+		8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+AR.swift"; sourceTree = "<group>"; };
+		ADF2CAF37A27786985D0F510 /* Pods-VFX-ARUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CC4BD40C47A9F7432708F347 /* Pods-VFX-ARUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE303474B5B5D38658386166 /* Pods-VFX-ARTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8CCC53781FC361C600EC410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D3AB957DAD17593E0CFC1C5 /* Pods_VFX_AR.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC538E1FC361C600EC410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				38DAB94708076E19F77BBCEA /* Pods_VFX_ARTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC53991FC361C600EC410C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3746D40F38A89C581331B92 /* Pods_VFX_ARUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		568AD0B335A3A1E733E980CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				02B9A98E414A3A39B3B5B9A0 /* Pods-VFX-AR.debug.xcconfig */,
+				0109B6DBEC3585CF5748C404 /* Pods-VFX-AR.release.xcconfig */,
+				FE303474B5B5D38658386166 /* Pods-VFX-ARTests.debug.xcconfig */,
+				2BA5ADBC315E76BA89A6B5B9 /* Pods-VFX-ARTests.release.xcconfig */,
+				CC4BD40C47A9F7432708F347 /* Pods-VFX-ARUITests.debug.xcconfig */,
+				ADF2CAF37A27786985D0F510 /* Pods-VFX-ARUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8C1B7E04202C6A53005D40E0 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */,
+				8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */,
+				8C8A75FB203C530200AD350D /* Helpers+Classes.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		8C4DE28D1FE1EF0C00832EB3 /* LU */ = {
+			isa = PBXGroup;
+			children = (
+				8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */,
+				8CBE532A20220F6B004E5ECF /* LUInteractiveObjectsSubClass */,
+				8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */,
+				8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */,
+				8C1B7E00202B057E005D40E0 /* LUReferencePosition.swift */,
+				8C4DE2861FE1EB9A00832EB3 /* LUScene.swift */,
+				8C3F9D152018E8FC000FEEFA /* LUCoders.swift */,
+			);
+			name = LU;
+			sourceTree = "<group>";
+		};
+		8C4DE28F1FE1EF4500832EB3 /* VC Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */,
+				8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */,
+				8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */,
+				8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */,
+				8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */,
+				8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */,
+				8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */,
+				8C8A75FD203C574100AD350D /* ViewController+UI.swift */,
+			);
+			name = "VC Extensions";
+			sourceTree = "<group>";
+		};
+		8CBE532A20220F6B004E5ECF /* LUInteractiveObjectsSubClass */ = {
+			isa = PBXGroup;
+			children = (
+				8CBE532820220A38004E5ECF /* LU3DBox.swift */,
+			);
+			name = LUInteractiveObjectsSubClass;
+			sourceTree = "<group>";
+		};
+		8CCC53721FC361C600EC410C = {
+			isa = PBXGroup;
+			children = (
+				8CCC537D1FC361C600EC410C /* VFX-AR */,
+				8CCC53941FC361C600EC410C /* VFX-ARTests */,
+				8CCC539F1FC361C600EC410C /* VFX-ARUITests */,
+				8CCC537C1FC361C600EC410C /* Products */,
+				568AD0B335A3A1E733E980CF /* Pods */,
+				A68E4055F6167F1426A414F1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8CCC537C1FC361C600EC410C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC537B1FC361C600EC410C /* VFX-AR.app */,
+				8CCC53911FC361C600EC410C /* VFX-ARTests.xctest */,
+				8CCC539C1FC361C600EC410C /* VFX-ARUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8CCC537D1FC361C600EC410C /* VFX-AR */ = {
+			isa = PBXGroup;
+			children = (
+				8C8A7605204A121900AD350D /* ViewControllerARCL.swift */,
+				8CCC53821FC361C600EC410C /* ViewController.swift */,
+				8CCC53841FC361C600EC410C /* Main.storyboard */,
+				8CCC538C1FC361C600EC410C /* Info.plist */,
+				8C1B7E04202C6A53005D40E0 /* Helpers */,
+				8C4DE28F1FE1EF4500832EB3 /* VC Extensions */,
+				8C4DE28D1FE1EF0C00832EB3 /* LU */,
+				8CCC53B41FC39E7900EC410C /* Resources */,
+			);
+			path = "VFX-AR";
+			sourceTree = "<group>";
+		};
+		8CCC53941FC361C600EC410C /* VFX-ARTests */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC53951FC361C600EC410C /* VFX_ARTests.swift */,
+				8CCC53971FC361C600EC410C /* Info.plist */,
+			);
+			path = "VFX-ARTests";
+			sourceTree = "<group>";
+		};
+		8CCC539F1FC361C600EC410C /* VFX-ARUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC53A01FC361C600EC410C /* VFX_ARUITests.swift */,
+				8CCC53A21FC361C600EC410C /* Info.plist */,
+			);
+			path = "VFX-ARUITests";
+			sourceTree = "<group>";
+		};
+		8CCC53B41FC39E7900EC410C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC53801FC361C600EC410C /* art.scnassets */,
+				8CCC53871FC361C600EC410C /* Assets.xcassets */,
+				8CCC537E1FC361C600EC410C /* AppDelegate.swift */,
+				8CCC53891FC361C600EC410C /* LaunchScreen.storyboard */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A68E4055F6167F1426A414F1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8145630A4055024C530EAFE9 /* Pods_VFX_AR.framework */,
+				10967F665EE5EA28FA38F950 /* Pods_VFX_ARTests.framework */,
+				69E98CE799AE02D5E09FE1EC /* Pods_VFX_ARUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8CCC537A1FC361C600EC410C /* VFX-AR */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CCC53A51FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-AR" */;
+			buildPhases = (
+				0583ABD58DC74B42E24A509C /* [CP] Check Pods Manifest.lock */,
+				8CCC53771FC361C600EC410C /* Sources */,
+				8CCC53781FC361C600EC410C /* Frameworks */,
+				8CCC53791FC361C600EC410C /* Resources */,
+				76C8E1999A33BE84619D71D5 /* [CP] Embed Pods Frameworks */,
+				2CF7411E40D457A8BDAB4DCE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "VFX-AR";
+			productName = "VFX-AR";
+			productReference = 8CCC537B1FC361C600EC410C /* VFX-AR.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8CCC53901FC361C600EC410C /* VFX-ARTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CCC53A81FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-ARTests" */;
+			buildPhases = (
+				FC09D189D6272E7F5B1B2FAD /* [CP] Check Pods Manifest.lock */,
+				8CCC538D1FC361C600EC410C /* Sources */,
+				8CCC538E1FC361C600EC410C /* Frameworks */,
+				8CCC538F1FC361C600EC410C /* Resources */,
+				7992534EC737857761B9DD92 /* [CP] Embed Pods Frameworks */,
+				141F508DBE7F2EEFFDBA5469 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CCC53931FC361C600EC410C /* PBXTargetDependency */,
+			);
+			name = "VFX-ARTests";
+			productName = "VFX-ARTests";
+			productReference = 8CCC53911FC361C600EC410C /* VFX-ARTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8CCC539B1FC361C600EC410C /* VFX-ARUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8CCC53AB1FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-ARUITests" */;
+			buildPhases = (
+				7FF8070AD248665F9B3201CD /* [CP] Check Pods Manifest.lock */,
+				8CCC53981FC361C600EC410C /* Sources */,
+				8CCC53991FC361C600EC410C /* Frameworks */,
+				8CCC539A1FC361C600EC410C /* Resources */,
+				1881ABD42C85C7D22A255B41 /* [CP] Embed Pods Frameworks */,
+				18B6941165E3AC46E40441BD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8CCC539E1FC361C600EC410C /* PBXTargetDependency */,
+			);
+			name = "VFX-ARUITests";
+			productName = "VFX-ARUITests";
+			productReference = 8CCC539C1FC361C600EC410C /* VFX-ARUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8CCC53731FC361C600EC410C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = HSB;
+				TargetAttributes = {
+					8CCC537A1FC361C600EC410C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+					8CCC53901FC361C600EC410C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CCC537A1FC361C600EC410C;
+					};
+					8CCC539B1FC361C600EC410C = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8CCC537A1FC361C600EC410C;
+					};
+				};
+			};
+			buildConfigurationList = 8CCC53761FC361C600EC410C /* Build configuration list for PBXProject "VFX-AR" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8CCC53721FC361C600EC410C;
+			productRefGroup = 8CCC537C1FC361C600EC410C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8CCC537A1FC361C600EC410C /* VFX-AR */,
+				8CCC53901FC361C600EC410C /* VFX-ARTests */,
+				8CCC539B1FC361C600EC410C /* VFX-ARUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8CCC53791FC361C600EC410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CCC53811FC361C600EC410C /* art.scnassets in Resources */,
+				8CCC538B1FC361C600EC410C /* LaunchScreen.storyboard in Resources */,
+				8CCC53881FC361C600EC410C /* Assets.xcassets in Resources */,
+				8CCC53861FC361C600EC410C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC538F1FC361C600EC410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC539A1FC361C600EC410C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0583ABD58DC74B42E24A509C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VFX-AR-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		141F508DBE7F2EEFFDBA5469 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1881ABD42C85C7D22A255B41 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		18B6941165E3AC46E40441BD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2CF7411E40D457A8BDAB4DCE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76C8E1999A33BE84619D71D5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARCL/ARCL.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
+				"${BUILT_PRODUCTS_DIR}/LASwift/LASwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARCL.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LASwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7992534EC737857761B9DD92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7FF8070AD248665F9B3201CD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VFX-ARUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC09D189D6272E7F5B1B2FAD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VFX-ARTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8CCC53771FC361C600EC410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */,
+				8CCC53831FC361C600EC410C /* ViewController.swift in Sources */,
+				8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */,
+				8C4DE2851FE1E56200832EB3 /* ViewController+CL.swift in Sources */,
+				8C3F9D182018E963000FEEFA /* ViewController+Buttons.swift in Sources */,
+				8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */,
+				8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */,
+				8C3F9D162018E8FC000FEEFA /* LUCoders.swift in Sources */,
+				8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */,
+				8CCC53B11FC39C1D00EC410C /* ViewController+TableView.swift in Sources */,
+				8C1B7E01202B057E005D40E0 /* LUReferencePosition.swift in Sources */,
+				8CBE532920220A38004E5ECF /* LU3DBox.swift in Sources */,
+				8C4DE28B1FE1EDE300832EB3 /* LUMark.swift in Sources */,
+				8C3F9D142017872F000FEEFA /* ViewController+ARPlanes.swift in Sources */,
+				8C8A7606204A121900AD350D /* ViewControllerARCL.swift in Sources */,
+				8C1B7E03202C6A1B005D40E0 /* Helpers+Functions.swift in Sources */,
+				8CCC53AF1FC39B4800EC410C /* ViewController+GesturesHandle.swift in Sources */,
+				8C1B7E06202CBAFC005D40E0 /* ViewController+LU.swift in Sources */,
+				8CCC53B31FC39D2600EC410C /* ViewController+AR.swift in Sources */,
+				8C8A75FE203C574100AD350D /* ViewController+UI.swift in Sources */,
+				8C4DE2871FE1EB9A00832EB3 /* LUScene.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC538D1FC361C600EC410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CCC53961FC361C600EC410C /* VFX_ARTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8CCC53981FC361C600EC410C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CCC53A11FC361C600EC410C /* VFX_ARUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8CCC53931FC361C600EC410C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CCC537A1FC361C600EC410C /* VFX-AR */;
+			targetProxy = 8CCC53921FC361C600EC410C /* PBXContainerItemProxy */;
+		};
+		8CCC539E1FC361C600EC410C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8CCC537A1FC361C600EC410C /* VFX-AR */;
+			targetProxy = 8CCC539D1FC361C600EC410C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8CCC53841FC361C600EC410C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CCC53851FC361C600EC410C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8CCC53891FC361C600EC410C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8CCC538A1FC361C600EC410C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8CCC53A31FC361C600EC410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8CCC53A41FC361C600EC410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8CCC53A61FC361C600EC410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 02B9A98E414A3A39B3B5B9A0 /* Pods-VFX-AR.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-AR/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8CCC53A71FC361C600EC410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0109B6DBEC3585CF5748C404 /* Pods-VFX-AR.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-AR/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-AR";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8CCC53A91FC361C600EC410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FE303474B5B5D38658386166 /* Pods-VFX-ARTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-ARTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-ARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VFX-AR.app/VFX-AR";
+			};
+			name = Debug;
+		};
+		8CCC53AA1FC361C600EC410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2BA5ADBC315E76BA89A6B5B9 /* Pods-VFX-ARTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-ARTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-ARTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VFX-AR.app/VFX-AR";
+			};
+			name = Release;
+		};
+		8CCC53AC1FC361C600EC410C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC4BD40C47A9F7432708F347 /* Pods-VFX-ARUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-ARUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-ARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VFX-AR";
+			};
+			name = Debug;
+		};
+		8CCC53AD1FC361C600EC410C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADF2CAF37A27786985D0F510 /* Pods-VFX-ARUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PETS3Y3UCQ;
+				INFOPLIST_FILE = "VFX-ARUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-ARUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "VFX-AR";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8CCC53761FC361C600EC410C /* Build configuration list for PBXProject "VFX-AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CCC53A31FC361C600EC410C /* Debug */,
+				8CCC53A41FC361C600EC410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CCC53A51FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-AR" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CCC53A61FC361C600EC410C /* Debug */,
+				8CCC53A71FC361C600EC410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CCC53A81FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-ARTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CCC53A91FC361C600EC410C /* Debug */,
+				8CCC53AA1FC361C600EC410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8CCC53AB1FC361C600EC410C /* Build configuration list for PBXNativeTarget "VFX-ARUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8CCC53AC1FC361C600EC410C /* Debug */,
+				8CCC53AD1FC361C600EC410C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8CCC53731FC361C600EC410C /* Project object */;
+}

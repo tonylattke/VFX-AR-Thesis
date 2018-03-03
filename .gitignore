@@ -1,0 +1,12 @@
+# Author: Tony Lattke
+
+/build/
+# Xcode
+
+.DS_Store
+
+# Cocoapods
+/Pods/
+
+# In particular, if you're using CocoaPods, you'll want to comment-out this line:
+*.lock
