@@ -11,7 +11,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-extension ViewController: UITableViewDelegate, UITableViewDataSource {
+extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
     
     // Init tables
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -12,7 +12,7 @@ import SceneKit
 import ARKit
 
 // Multiple Gestures available
-extension ViewController: UIGestureRecognizerDelegate {
+extension ViewControllerVFXAR: UIGestureRecognizerDelegate {
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -20,7 +20,7 @@ extension ViewController: UIGestureRecognizerDelegate {
 }
 
 // Gestures
-extension ViewController {
+extension ViewControllerVFXAR {
     
     // Left to the right border
     @IBAction func leftToRightGestureHandle(_ sender: UIScreenEdgePanGestureRecognizer) {
@@ -72,40 +72,15 @@ extension ViewController {
                 let result = hitResults.first!
                 if result.node.name == "LUMark" {
                     selectedLUMark = result.node.parent as? LUMark
-                    checkBaseMarkButton.isHidden = false
-                    uncheckBaseMarkButton.isHidden = false
+                    showMarkOptions()
                 }
             } else {
                 selectedLUMark = nil
-                checkBaseMarkButton.isHidden = true
-                uncheckBaseMarkButton.isHidden = true
+                hideMarkOptions()
             }
         default:
             break // Do nothing
         }
     }
     
-    // Show Settings Menu
-    func showSettingsMenu(){
-        leadingConstraintRight.constant = 0
-        settingsMenuIsShowing = true
-    }
-    
-    // Hide Settings Menu
-    func hideSettingsMenu(){
-        leadingConstraintRight.constant = -240
-        settingsMenuIsShowing = false
-    }
-    
-    // Show Effects Menu
-    func showEffectsMenu(){
-        leadingConstraintLeft.constant = 0
-        effectsMenuIsShowing = true
-    }
-    
-    // Hide Effects Menu
-    func hideEffectsMenu(){
-        leadingConstraintLeft.constant = -240
-        effectsMenuIsShowing = false
-    }
 }

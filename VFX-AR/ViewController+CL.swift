@@ -10,7 +10,7 @@ import Foundation
 import CoreLocation
 import SceneKit
 
-extension ViewController: CLLocationManagerDelegate {
+extension ViewControllerVFXAR: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let lastPosition = locations.last

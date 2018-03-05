@@ -15,7 +15,7 @@ import SwiftyJSON
 
 let filenameDB = "database.json" //this is the file. I will write to and read from it
 
-extension ViewController {
+extension ViewControllerVFXAR {
     
     // Reset
     @IBAction func resetButtonTouchDown(_ sender: UIButton) {

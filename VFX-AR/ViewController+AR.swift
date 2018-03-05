@@ -11,7 +11,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-extension ViewController {
+extension ViewControllerVFXAR {
     
     // Present an error message to the user
     func session(_ session: ARSession, didFailWithError error: Error) {
@@ -43,6 +43,6 @@ extension ViewController {
         }
         
         // Update label
-        statusBarLabel.title = status
+        self.title = status
     }
 }

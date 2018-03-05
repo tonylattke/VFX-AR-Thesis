@@ -12,7 +12,7 @@ import CoreLocation
 import FontAwesome_swift
 import SwiftyJSON
 
-extension ViewController {
+extension ViewControllerVFXAR {
     
     // Init
     func initUI(){
@@ -32,7 +32,7 @@ extension ViewController {
     // Set Idle mode
     func setIdleModeUI(){
         // Status bar label
-        statusBarLabel.title = "Idle"
+        self.title = "Idle"
         
         // Buttons
         saveButton.isHidden = false
@@ -46,7 +46,7 @@ extension ViewController {
     // Set Creation mode
     func setCreationModeUI(){
         // Status bar label
-        statusBarLabel.title = "Creation Mode"
+        self.title = "Creation Mode"
         
         // Buttons
         saveButton.isHidden = false
@@ -60,13 +60,23 @@ extension ViewController {
     // Set Relocate mode
     func setRelocateModeUI(){
         // Status bar label
-        statusBarLabel.title = "Relocate Mode"
+        self.title = "Relocate Mode"
         
         // Buttons
         saveButton.isHidden = true
         readButton.isHidden = false
         resetButton.isHidden = false
         
+        checkBaseMarkButton.isHidden = true
+        uncheckBaseMarkButton.isHidden = true
+    }
+    
+    func showMarkOptions(){
+        checkBaseMarkButton.isHidden = false
+        uncheckBaseMarkButton.isHidden = false
+    }
+    
+    func hideMarkOptions(){
         checkBaseMarkButton.isHidden = true
         uncheckBaseMarkButton.isHidden = true
     }
@@ -81,6 +91,30 @@ extension ViewController {
                                                 style: UIAlertActionStyle.default,
                                                 handler: nil))
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // Show Settings Menu
+    func showSettingsMenu(){
+        leadingConstraintRight.constant = 0
+        settingsMenuIsShowing = true
+    }
+    
+    // Hide Settings Menu
+    func hideSettingsMenu(){
+        leadingConstraintRight.constant = 240
+        settingsMenuIsShowing = false
+    }
+    
+    // Show Effects Menu
+    func showEffectsMenu(){
+        leadingConstraintLeft.constant = 0
+        effectsMenuIsShowing = true
+    }
+    
+    // Hide Effects Menu
+    func hideEffectsMenu(){
+        leadingConstraintLeft.constant = -240
+        effectsMenuIsShowing = false
     }
     
 }

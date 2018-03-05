@@ -11,7 +11,7 @@ import UIKit
 import SceneKit
 import ARKit
 
-extension ViewController {
+extension ViewControllerVFXAR {
     
     // Here you will have access to the news detected planes
     // To activate this function, you need in the session configuration: .planeDetection = .horizontal

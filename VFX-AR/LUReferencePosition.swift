@@ -54,7 +54,7 @@ func comparisonX(mark: LUMark, marks: [UUID:LUMark], comparison: (Float,Float) -
     var result = [UUID]()
     for otherMark in marks {
         if mark.id != otherMark.value.id &&
-           comparison(otherMark.value.simdTransform.columns.3.x, mark.simdTransform.columns.3.x) {
+           comparison(otherMark.value.simdTransform.columns.3.x + otherMark.value.nodeInSceneRelativPosition.x, mark.simdTransform.columns.3.x) {
             result.appendUnique(newElement: otherMark.value.id)
         }
     }
@@ -69,11 +69,11 @@ func comparisonY(mark: LUMark, marks: [UUID:LUMark], comparison: (Float,Float) -
     for otherMark in marks {
         if mark.id != otherMark.value.id { // If it is not the same mark
             if (!mark.loaded && !otherMark.value.loaded && // They are no loaded marks
-               comparison(otherMark.value.anchor.transform.columns.3.y,
-                          mark.anchor.transform.columns.3.y)) ||
+               comparison(otherMark.value.anchor.transform.columns.3.y + otherMark.value.nodeInSceneRelativPosition.y,
+                          mark.anchor.transform.columns.3.y + mark.nodeInSceneRelativPosition.y)) ||
                (mark.loaded && otherMark.value.loaded &&  // They are loaded marks
-               comparison(otherMark.value.simdTransform.columns.3.y,
-                          mark.simdTransform.columns.3.y)) {
+               comparison(otherMark.value.simdTransform.columns.3.y + otherMark.value.nodeInSceneRelativPosition.y,
+                          mark.simdTransform.columns.3.y + mark.nodeInSceneRelativPosition.y)) {
                 result.appendUnique(newElement: otherMark.value.id)
             }
         }
@@ -87,7 +87,7 @@ func comparisonZ(mark: LUMark, marks: [UUID:LUMark], comparison: (Float,Float) -
     var result = [UUID]()
     for otherMark in marks {
         if mark.id != otherMark.value.id &&
-           comparison(otherMark.value.simdTransform.columns.3.z, mark.simdTransform.columns.3.z) {
+           comparison(otherMark.value.simdTransform.columns.3.z + otherMark.value.nodeInSceneRelativPosition.z, mark.simdTransform.columns.3.z + mark.nodeInSceneRelativPosition.z) {
             result.appendUnique(newElement: otherMark.value.id)
         }
     }

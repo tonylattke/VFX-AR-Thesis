@@ -15,7 +15,7 @@ func sizeCompare(old: Float, new: Float) -> Float {
     return result > 0 ? result : 0
 }
 
-extension ViewController {
+extension ViewControllerVFXAR {
     
     func updateMarkIdTable() {
         

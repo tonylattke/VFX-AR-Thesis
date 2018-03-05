@@ -13,7 +13,7 @@ import CoreLocation
 import FontAwesome_swift
 import SwiftyJSON
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
 
     // AR
     @IBOutlet weak var sceneView: ARSCNView!
@@ -60,7 +60,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
-    @IBOutlet weak var statusBarLabel: UINavigationItem!
     @IBOutlet weak var appModeControl: UISegmentedControl!
     
     // CoreLocation
@@ -79,6 +78,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         
         // Set the view's delegate
         sceneView.delegate = self
