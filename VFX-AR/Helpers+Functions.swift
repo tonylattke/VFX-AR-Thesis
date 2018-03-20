@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import UIKit
+import SwiftyJSON
 
 // Compare the base marks with the current marks
 func baseMarksVSCurrentMarks(markIdTable: [UUID: UUID?], baseMarks: [UUID], currentMarks: [UUID]) -> Float {
@@ -104,4 +106,135 @@ func filterIDs(referenceIDs: [UUID], marks: [UUID : LUMark]) -> [UUID] {
     }
     
     return result
+}
+
+// Create UIImage
+func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
+    let rect = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    color.setFill()
+    UIRectFill(rect)
+    let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+    UIGraphicsEndImageContext()
+    return image
+}
+
+func updateDBFile(filenameDB: String, counterID: Int) {
+    // Read
+    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        let fileURL = dir.appendingPathComponent(filenameDB)
+        
+        // ----------------------------- Reading -------------------------------
+        do {
+            let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+            if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
+                do {
+                    let jsonData = try JSON(data: dataFromString)
+                    
+                    // ---------------------- Save -------------------------
+                    
+                    // Coding final json object
+                    var json: JSON =  [
+                        "currentSceneID": counterID
+                    ]
+                    json["scenes"] = jsonData["scenes"]
+                    
+                    // JSON to string
+                    let text = json.rawString([.castNilToNSNull: true]) //just a text
+                    
+                    // Accesing to file system
+                    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                        // Setting URL
+                        let fileURL = dir.appendingPathComponent(filenameDB)
+                        
+                        //writing
+                        do {
+                            try text?.write(to: fileURL, atomically: false, encoding: .utf8)
+                            print("save successful")
+                        }
+                        catch {/* error handling here */}
+                    }
+                    
+                } catch {
+                    print("json error")
+                }
+            }
+        }
+        catch {/* error handling here */}
+    }
+    
+}
+
+func updateDBFile(filenameDB: String, newSceneFile: String, sceneId: Int) {
+    var currentSceneID: Int = 0
+    var scenes: [SceneInfo] = []
+    
+    // Read
+    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        let fileURL = dir.appendingPathComponent(filenameDB)
+        
+        // ----------------------------- Reading -------------------------------
+        do {
+            let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+            if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
+                do {
+                    let jsonData = try JSON(data: dataFromString)
+                    
+                    // Load scene id
+                    currentSceneID = jsonData["currentSceneID"].intValue
+                    
+                    // Load scenes info
+                    var existOnDB = false
+                    for scene in jsonData["scenes"].arrayValue {
+                        let loadedScene = JSONtoSceneInfo(data: scene)
+                        if sceneId != loadedScene.id {
+                            scenes.append(loadedScene)
+                        } else {
+                            existOnDB = true
+                        }
+                    }
+                    
+                    if !existOnDB {
+                        let newScene = SceneInfo(id: sceneId, name: newSceneFile)
+                        scenes.append(newScene)
+                        
+                        // ---------------------- Save -------------------------
+                        
+                        // Coding scenes
+                        var scenesJSON: [JSON] = []
+                        for scene in scenes {
+                            let sceneJSON = SceneInfoToJSON(sceneInfo: scene)
+                            scenesJSON.append(sceneJSON)
+                        }
+                        
+                        // Coding final json object
+                        let json: JSON =  [
+                            "currentSceneID": currentSceneID,
+                            "scenes": scenesJSON
+                        ]
+                        
+                        // JSON to string
+                        let text = json.rawString([.castNilToNSNull: true]) //just a text
+                        
+                        // Accesing to file system
+                        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+                            // Setting URL
+                            let fileURL = dir.appendingPathComponent(filenameDB)
+                            
+                            //writing
+                            do {
+                                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
+                                print("save successful")
+                            }
+                            catch {/* error handling here */}
+                        }
+                    }
+                } catch {
+                    print("json error")
+                }
+            }
+        }
+        catch {/* error handling here */}
+    }
+
 }

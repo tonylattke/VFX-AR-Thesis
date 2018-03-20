@@ -17,3 +17,19 @@ public enum AppMode:Int {
     case relocate = 2
 }
 
+// AppMode
+public enum AppStartMode:Int {
+    case creation = 0
+    case load = 1
+}
+
+// SceneInfo
+public class SceneInfo {
+    let id: Int
+    let name: String
+    
+    init(id: Int, name: String) {
+        self.id = id
+        self.name = name
+    }
+}

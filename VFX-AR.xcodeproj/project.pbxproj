@@ -11,20 +11,25 @@
 		38DAB94708076E19F77BBCEA /* Pods_VFX_ARTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10967F665EE5EA28FA38F950 /* Pods_VFX_ARTests.framework */; };
 		8C1B7E01202B057E005D40E0 /* LUReferencePosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E00202B057E005D40E0 /* LUReferencePosition.swift */; };
 		8C1B7E03202C6A1B005D40E0 /* Helpers+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */; };
-		8C1B7E06202CBAFC005D40E0 /* ViewController+LU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */; };
-		8C3F9D142017872F000FEEFA /* ViewController+ARPlanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */; };
+		8C1B7E06202CBAFC005D40E0 /* VC-VFXAR+LU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E05202CBAFC005D40E0 /* VC-VFXAR+LU.swift */; };
+		8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631CD2061306700F01168 /* VC-Home+TableView.swift */; };
+		8C3631D120615B2F00F01168 /* VC-Home+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631D020615B2F00F01168 /* VC-Home+Buttons.swift */; };
+		8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631D2206167A200F01168 /* VC-ARCL+Buttons.swift */; };
+		8C3631D520616F3600F01168 /* VC-Home+Coders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631D420616F3600F01168 /* VC-Home+Coders.swift */; };
+		8C3F9D142017872F000FEEFA /* VC-VFXAR+ARPlanes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D132017872F000FEEFA /* VC-VFXAR+ARPlanes.swift */; };
 		8C3F9D162018E8FC000FEEFA /* LUCoders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D152018E8FC000FEEFA /* LUCoders.swift */; };
-		8C3F9D182018E963000FEEFA /* ViewController+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */; };
-		8C4DE2851FE1E56200832EB3 /* ViewController+CL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */; };
+		8C3F9D182018E963000FEEFA /* VC-VFXAR+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3F9D172018E963000FEEFA /* VC-VFXAR+Buttons.swift */; };
+		8C4DE2851FE1E56200832EB3 /* VC-VFXAR+CL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2841FE1E56200832EB3 /* VC-VFXAR+CL.swift */; };
 		8C4DE2871FE1EB9A00832EB3 /* LUScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2861FE1EB9A00832EB3 /* LUScene.swift */; };
 		8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */; };
 		8C4DE28B1FE1EDE300832EB3 /* LUMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */; };
 		8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */; };
 		8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */; };
 		8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FB203C530200AD350D /* Helpers+Classes.swift */; };
-		8C8A75FE203C574100AD350D /* ViewController+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FD203C574100AD350D /* ViewController+UI.swift */; };
+		8C8A75FE203C574100AD350D /* VC-VFXAR+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FD203C574100AD350D /* VC-VFXAR+UI.swift */; };
 		8C8A7606204A121900AD350D /* ViewControllerARCL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A7605204A121900AD350D /* ViewControllerARCL.swift */; };
 		8C8A7608204ACB7400AD350D /* ViewControllerHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A7607204ACB7400AD350D /* ViewControllerHome.swift */; };
+		8CA06D2B204ED80C0069FF96 /* VC-ARCL+CL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CA06D2A204ED80C0069FF96 /* VC-ARCL+CL.swift */; };
 		8CBE532920220A38004E5ECF /* LU3DBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CBE532820220A38004E5ECF /* LU3DBox.swift */; };
 		8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC537E1FC361C600EC410C /* AppDelegate.swift */; };
 		8CCC53811FC361C600EC410C /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53801FC361C600EC410C /* art.scnassets */; };
@@ -34,9 +39,9 @@
 		8CCC538B1FC361C600EC410C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CCC53891FC361C600EC410C /* LaunchScreen.storyboard */; };
 		8CCC53961FC361C600EC410C /* VFX_ARTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53951FC361C600EC410C /* VFX_ARTests.swift */; };
 		8CCC53A11FC361C600EC410C /* VFX_ARUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53A01FC361C600EC410C /* VFX_ARUITests.swift */; };
-		8CCC53AF1FC39B4800EC410C /* ViewController+GesturesHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */; };
-		8CCC53B11FC39C1D00EC410C /* ViewController+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */; };
-		8CCC53B31FC39D2600EC410C /* ViewController+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */; };
+		8CCC53AF1FC39B4800EC410C /* VC-VFXAR+GesturesHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53AE1FC39B4800EC410C /* VC-VFXAR+GesturesHandle.swift */; };
+		8CCC53B11FC39C1D00EC410C /* VC-VFXAR+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B01FC39C1D00EC410C /* VC-VFXAR+TableView.swift */; };
+		8CCC53B31FC39D2600EC410C /* VC-VFXAR+AR.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CCC53B21FC39D2600EC410C /* VC-VFXAR+AR.swift */; };
 		E3746D40F38A89C581331B92 /* Pods_VFX_ARUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69E98CE799AE02D5E09FE1EC /* Pods_VFX_ARUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -66,20 +71,25 @@
 		8145630A4055024C530EAFE9 /* Pods_VFX_AR.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VFX_AR.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C1B7E00202B057E005D40E0 /* LUReferencePosition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUReferencePosition.swift; sourceTree = "<group>"; };
 		8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Functions.swift"; sourceTree = "<group>"; };
-		8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+LU.swift"; sourceTree = "<group>"; };
-		8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+ARPlanes.swift"; sourceTree = "<group>"; };
+		8C1B7E05202CBAFC005D40E0 /* VC-VFXAR+LU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+LU.swift"; sourceTree = "<group>"; };
+		8C3631CD2061306700F01168 /* VC-Home+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-Home+TableView.swift"; sourceTree = "<group>"; };
+		8C3631D020615B2F00F01168 /* VC-Home+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-Home+Buttons.swift"; sourceTree = "<group>"; };
+		8C3631D2206167A200F01168 /* VC-ARCL+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-ARCL+Buttons.swift"; sourceTree = "<group>"; };
+		8C3631D420616F3600F01168 /* VC-Home+Coders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-Home+Coders.swift"; sourceTree = "<group>"; };
+		8C3F9D132017872F000FEEFA /* VC-VFXAR+ARPlanes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+ARPlanes.swift"; sourceTree = "<group>"; };
 		8C3F9D152018E8FC000FEEFA /* LUCoders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUCoders.swift; sourceTree = "<group>"; };
-		8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Buttons.swift"; sourceTree = "<group>"; };
-		8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+CL.swift"; sourceTree = "<group>"; };
+		8C3F9D172018E963000FEEFA /* VC-VFXAR+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+Buttons.swift"; sourceTree = "<group>"; };
+		8C4DE2841FE1E56200832EB3 /* VC-VFXAR+CL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+CL.swift"; sourceTree = "<group>"; };
 		8C4DE2861FE1EB9A00832EB3 /* LUScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUScene.swift; sourceTree = "<group>"; };
 		8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUObject.swift; sourceTree = "<group>"; };
 		8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUMark.swift; sourceTree = "<group>"; };
 		8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUInteractivObject.swift; sourceTree = "<group>"; };
 		8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Extensions.swift"; sourceTree = "<group>"; };
 		8C8A75FB203C530200AD350D /* Helpers+Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Classes.swift"; sourceTree = "<group>"; };
-		8C8A75FD203C574100AD350D /* ViewController+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+UI.swift"; sourceTree = "<group>"; };
+		8C8A75FD203C574100AD350D /* VC-VFXAR+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+UI.swift"; sourceTree = "<group>"; };
 		8C8A7605204A121900AD350D /* ViewControllerARCL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerARCL.swift; sourceTree = "<group>"; };
 		8C8A7607204ACB7400AD350D /* ViewControllerHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerHome.swift; sourceTree = "<group>"; };
+		8CA06D2A204ED80C0069FF96 /* VC-ARCL+CL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-ARCL+CL.swift"; sourceTree = "<group>"; };
 		8CBE532820220A38004E5ECF /* LU3DBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LU3DBox.swift; sourceTree = "<group>"; };
 		8CCC537B1FC361C600EC410C /* VFX-AR.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "VFX-AR.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCC537E1FC361C600EC410C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,9 +105,9 @@
 		8CCC539C1FC361C600EC410C /* VFX-ARUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "VFX-ARUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CCC53A01FC361C600EC410C /* VFX_ARUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VFX_ARUITests.swift; sourceTree = "<group>"; };
 		8CCC53A21FC361C600EC410C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+GesturesHandle.swift"; sourceTree = "<group>"; };
-		8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+TableView.swift"; sourceTree = "<group>"; };
-		8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+AR.swift"; sourceTree = "<group>"; };
+		8CCC53AE1FC39B4800EC410C /* VC-VFXAR+GesturesHandle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+GesturesHandle.swift"; sourceTree = "<group>"; };
+		8CCC53B01FC39C1D00EC410C /* VC-VFXAR+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+TableView.swift"; sourceTree = "<group>"; };
+		8CCC53B21FC39D2600EC410C /* VC-VFXAR+AR.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+AR.swift"; sourceTree = "<group>"; };
 		ADF2CAF37A27786985D0F510 /* Pods-VFX-ARUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC4BD40C47A9F7432708F347 /* Pods-VFX-ARUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE303474B5B5D38658386166 /* Pods-VFX-ARTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VFX-ARTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,6 +164,16 @@
 			name = Helpers;
 			sourceTree = "<group>";
 		};
+		8C3631CF2061306F00F01168 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				8C3631D020615B2F00F01168 /* VC-Home+Buttons.swift */,
+				8C3631CD2061306700F01168 /* VC-Home+TableView.swift */,
+				8C3631D420616F3600F01168 /* VC-Home+Coders.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 		8C4DE28D1FE1EF0C00832EB3 /* LU */ = {
 			isa = PBXGroup;
 			children = (
@@ -168,19 +188,38 @@
 			name = LU;
 			sourceTree = "<group>";
 		};
-		8C4DE28F1FE1EF4500832EB3 /* VC VFX Extensions */ = {
+		8C4DE28F1FE1EF4500832EB3 /* VC-Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				8CCC53B21FC39D2600EC410C /* ViewController+AR.swift */,
-				8C4DE2841FE1E56200832EB3 /* ViewController+CL.swift */,
-				8CCC53AE1FC39B4800EC410C /* ViewController+GesturesHandle.swift */,
-				8CCC53B01FC39C1D00EC410C /* ViewController+TableView.swift */,
-				8C3F9D132017872F000FEEFA /* ViewController+ARPlanes.swift */,
-				8C3F9D172018E963000FEEFA /* ViewController+Buttons.swift */,
-				8C1B7E05202CBAFC005D40E0 /* ViewController+LU.swift */,
-				8C8A75FD203C574100AD350D /* ViewController+UI.swift */,
+				8CA06D29204ED7A00069FF96 /* VFXAR */,
+				8CA06D2C204ED8720069FF96 /* ARCL */,
+				8C3631CF2061306F00F01168 /* Home */,
 			);
-			name = "VC VFX Extensions";
+			name = "VC-Extensions";
+			sourceTree = "<group>";
+		};
+		8CA06D29204ED7A00069FF96 /* VFXAR */ = {
+			isa = PBXGroup;
+			children = (
+				8CCC53B21FC39D2600EC410C /* VC-VFXAR+AR.swift */,
+				8C4DE2841FE1E56200832EB3 /* VC-VFXAR+CL.swift */,
+				8CCC53AE1FC39B4800EC410C /* VC-VFXAR+GesturesHandle.swift */,
+				8CCC53B01FC39C1D00EC410C /* VC-VFXAR+TableView.swift */,
+				8C3F9D132017872F000FEEFA /* VC-VFXAR+ARPlanes.swift */,
+				8C3F9D172018E963000FEEFA /* VC-VFXAR+Buttons.swift */,
+				8C1B7E05202CBAFC005D40E0 /* VC-VFXAR+LU.swift */,
+				8C8A75FD203C574100AD350D /* VC-VFXAR+UI.swift */,
+			);
+			name = VFXAR;
+			sourceTree = "<group>";
+		};
+		8CA06D2C204ED8720069FF96 /* ARCL */ = {
+			isa = PBXGroup;
+			children = (
+				8CA06D2A204ED80C0069FF96 /* VC-ARCL+CL.swift */,
+				8C3631D2206167A200F01168 /* VC-ARCL+Buttons.swift */,
+			);
+			name = ARCL;
 			sourceTree = "<group>";
 		};
 		8CBE532A20220F6B004E5ECF /* LUInteractiveObjectsSubClass */ = {
@@ -216,13 +255,13 @@
 		8CCC537D1FC361C600EC410C /* VFX-AR */ = {
 			isa = PBXGroup;
 			children = (
-				8C8A7605204A121900AD350D /* ViewControllerARCL.swift */,
 				8C8A7607204ACB7400AD350D /* ViewControllerHome.swift */,
+				8C8A7605204A121900AD350D /* ViewControllerARCL.swift */,
 				8CCC53821FC361C600EC410C /* ViewControllerVFXAR.swift */,
 				8CCC53841FC361C600EC410C /* Main.storyboard */,
 				8CCC538C1FC361C600EC410C /* Info.plist */,
 				8C1B7E04202C6A53005D40E0 /* Helpers */,
-				8C4DE28F1FE1EF4500832EB3 /* VC VFX Extensions */,
+				8C4DE28F1FE1EF4500832EB3 /* VC-Extensions */,
 				8C4DE28D1FE1EF0C00832EB3 /* LU */,
 				8CCC53B41FC39E7900EC410C /* Resources */,
 			);
@@ -571,24 +610,29 @@
 				8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */,
 				8CCC53831FC361C600EC410C /* ViewControllerVFXAR.swift in Sources */,
 				8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */,
-				8C4DE2851FE1E56200832EB3 /* ViewController+CL.swift in Sources */,
-				8C3F9D182018E963000FEEFA /* ViewController+Buttons.swift in Sources */,
+				8C4DE2851FE1E56200832EB3 /* VC-VFXAR+CL.swift in Sources */,
+				8C3631D120615B2F00F01168 /* VC-Home+Buttons.swift in Sources */,
+				8C3F9D182018E963000FEEFA /* VC-VFXAR+Buttons.swift in Sources */,
 				8C8A7608204ACB7400AD350D /* ViewControllerHome.swift in Sources */,
 				8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */,
+				8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */,
+				8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */,
 				8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */,
 				8C3F9D162018E8FC000FEEFA /* LUCoders.swift in Sources */,
 				8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */,
-				8CCC53B11FC39C1D00EC410C /* ViewController+TableView.swift in Sources */,
+				8CCC53B11FC39C1D00EC410C /* VC-VFXAR+TableView.swift in Sources */,
 				8C1B7E01202B057E005D40E0 /* LUReferencePosition.swift in Sources */,
 				8CBE532920220A38004E5ECF /* LU3DBox.swift in Sources */,
 				8C4DE28B1FE1EDE300832EB3 /* LUMark.swift in Sources */,
-				8C3F9D142017872F000FEEFA /* ViewController+ARPlanes.swift in Sources */,
+				8CA06D2B204ED80C0069FF96 /* VC-ARCL+CL.swift in Sources */,
+				8C3F9D142017872F000FEEFA /* VC-VFXAR+ARPlanes.swift in Sources */,
 				8C8A7606204A121900AD350D /* ViewControllerARCL.swift in Sources */,
 				8C1B7E03202C6A1B005D40E0 /* Helpers+Functions.swift in Sources */,
-				8CCC53AF1FC39B4800EC410C /* ViewController+GesturesHandle.swift in Sources */,
-				8C1B7E06202CBAFC005D40E0 /* ViewController+LU.swift in Sources */,
-				8CCC53B31FC39D2600EC410C /* ViewController+AR.swift in Sources */,
-				8C8A75FE203C574100AD350D /* ViewController+UI.swift in Sources */,
+				8CCC53AF1FC39B4800EC410C /* VC-VFXAR+GesturesHandle.swift in Sources */,
+				8C1B7E06202CBAFC005D40E0 /* VC-VFXAR+LU.swift in Sources */,
+				8CCC53B31FC39D2600EC410C /* VC-VFXAR+AR.swift in Sources */,
+				8C8A75FE203C574100AD350D /* VC-VFXAR+UI.swift in Sources */,
+				8C3631D520616F3600F01168 /* VC-Home+Coders.swift in Sources */,
 				8C4DE2871FE1EB9A00832EB3 /* LUScene.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

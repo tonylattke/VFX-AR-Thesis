@@ -32,12 +32,12 @@ extension ViewControllerVFXAR {
                 let averageComparison = (widthWidthComparison + heightHeightComparison)/2
                 
                 // Width vs Height & Height vs Width Comparison
-                let widthHeightComparison = sizeCompare(old: baseMark.value.width, new: newMark.value.height)
-                let heighWidthComparison = sizeCompare(old: baseMark.value.height, new: newMark.value.width)
-                let averageComparisonOposite = (widthHeightComparison+heighWidthComparison)/2
+//                let widthHeightComparison = sizeCompare(old: baseMark.value.width, new: newMark.value.height)
+//                let heighWidthComparison = sizeCompare(old: baseMark.value.height, new: newMark.value.width)
+//                let averageComparisonOposite = (widthHeightComparison+heighWidthComparison)/2
                 
                 // Select best average comparison
-                let sizeComparison = averageComparison > averageComparisonOposite ? averageComparison : averageComparisonOposite
+                let sizeComparison = averageComparison // > averageComparisonOposite ? averageComparison : averageComparisonOposite
                 
                 // Calculate comparison using size and position
                 let comparisionLevel: Float
@@ -87,7 +87,9 @@ extension ViewControllerVFXAR {
                 for mark in markIdTable {
                     if mark.value != nil && mark.value == bestMatchID {
                         markIdTable[mark.key] = nil
-                        currentLUScene.marks[mark.key]!.setNotUsed()
+                        if currentLUScene.marks[mark.key] != nil {
+                            currentLUScene.marks[mark.key]!.setNotUsed()
+                        }
                     }
                 }
                 
@@ -148,11 +150,6 @@ extension ViewControllerVFXAR {
                 object.simdTransform.columns.3.y = averagePosition.y
                 object.simdTransform.columns.3.z = averagePosition.z
                 object.isHidden = false
-                
-                let base = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-                let baseNode = SCNNode(geometry: base)
-                baseNode.simdTransform = matrix_multiply(matrix_identity_float4x4, object.loadedTransform!)
-                mainNodeScene.addChildNode(baseNode)
                 
                 print("final \(averagePosition)")
             }

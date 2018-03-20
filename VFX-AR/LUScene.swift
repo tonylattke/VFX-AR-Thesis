@@ -12,19 +12,23 @@ import CoreLocation
 
 public class LUScene {
     
+    var id: Int
+    
     var positionGPS: CLLocation? // float3???
     var objects: [LUInteractivObject]
     var marks: [UUID: LUMark]
     
     // Init
     init() {
+        self.id = 0
         positionGPS = CLLocation()
         objects = [LUInteractivObject]()
         marks = [UUID: LUMark]()
     }
     
     // Init - Used to load data
-    init(location: CLLocation, marks: [UUID: LUMark], objects: [LUInteractivObject]) {
+    init(id: Int, location: CLLocation, marks: [UUID: LUMark], objects: [LUInteractivObject]) {
+        self.id = id
         self.positionGPS = location
         self.marks = marks
         self.objects = objects

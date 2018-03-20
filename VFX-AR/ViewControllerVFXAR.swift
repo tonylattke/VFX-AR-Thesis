@@ -40,8 +40,10 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet var rightToLeftGesture: UIScreenEdgePanGestureRecognizer!
     @IBOutlet var letToRightGesture: UIScreenEdgePanGestureRecognizer!
     
+    var sceneID: Int = 0
+    
     // Scene
-    var currentLUScene = LUScene()
+    var currentLUScene:LUScene = LUScene()
     let scene = SCNScene()
     var mainNodeScene = SCNNode()
     
@@ -75,6 +77,12 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     // App mode
     var appMode: AppMode = .idle
     
+    // Start mode
+    var appStartMode: AppStartMode = .creation
+    
+    // Filename to load
+    var filenameToLoad: String = ""
+    
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,6 +107,8 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
         // Set effects menu table
         effectsMenu.register(UITableViewCell.self, forCellReuseIdentifier: "cellEffects")
         
+        currentLUScene = LUScene()
+        
         // Location Manager set
         locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
@@ -109,12 +119,29 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
             locationManager.startUpdatingLocation()
         }
         
-        // Set UI
+        // Init UI
         initUI()
         
-        // Set Idle
-        setIdleModeUI()
-        appMode = .idle
+        switch appStartMode {
+        case .creation:
+            currentLUScene.id = sceneID
+            
+            // Set Idle mode
+            setIdleModeUI()
+            appMode = .idle
+            
+            print("creation mode started")
+        case .load:
+            load(sceneFilename: filenameToLoad)
+            currentLUScene.id = (baseSessionScene?.id)!
+            
+            // Set Idle mode
+            setRelocateModeUI()
+            appModeControl.selectedSegmentIndex = 2
+            appMode = .relocate
+            
+            print("load mode started")
+        }
     }
     
     // Run
@@ -152,7 +179,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
                 mark.value.references.update(mark: mark.value, marks: currentLUScene.marks)
             }
             // Update mark matching and loaded objects
-            if frameCounter % 300 == 0 {
+            if frameCounter % 120 == 0 {
                 if baseSessionScene != nil {
                     // Update the Mark id Table
                     updateMarkIdTable()
@@ -166,6 +193,62 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
         
         // Update frame counter
         frameCounter = frameCounter + 1
+    }
+    
+    func load(sceneFilename: String) {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            
+            let fileURL = dir.appendingPathComponent(sceneFilename)
+            
+            //reading
+            do {
+                let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+                print(plaintText)
+                if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
+                    do {
+                        let jsonData = try JSON(data: dataFromString)
+                        
+                        // Rebuild last session
+                        let loadedSceneID = jsonData["id"].intValue
+                        // - Initial position
+                        let loadedBaseInitialPosition = jsonToCLLocation(data: jsonData["initialPosition"])
+                        // - Marks
+                        var loadedBaseMarks = [UUID: LUMark]()
+                        for mark in jsonData["marks"].arrayValue {
+                            let baseMark = JSONToLUMark(data: mark)
+                            loadedBaseMarks[baseMark.id] = baseMark
+                        }
+                        // - Objects
+                        var loadedBaseObjects = [LUInteractivObject]()
+                        for object in jsonData["objects"].arrayValue {
+                            let oldObject = JSONToLUInteractivObject(data: object)
+                            loadedBaseObjects.append(oldObject)
+                        }
+                        
+                        // Result
+                        baseSessionScene = LUScene(id: loadedSceneID, location: loadedBaseInitialPosition,
+                                                   marks: loadedBaseMarks, objects: loadedBaseObjects)
+                        
+                        for baseMark in (baseSessionScene?.marks)! {
+                            markIdTable[baseMark.key] = nil
+                        }
+                        
+                        updateMarkIdTable()
+                        
+                        for object in (baseSessionScene?.objects)! {
+                            object.isHidden = true
+                            currentLUScene.objects.append(object)
+                            mainNodeScene.addChildNode(object)
+                        }
+                        
+                        print("load successful")
+                    } catch {
+                        print("json error")
+                    }
+                }
+            }
+            catch {/* error handling here */}
+        }
     }
     
 }

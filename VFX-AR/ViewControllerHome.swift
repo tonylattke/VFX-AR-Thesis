@@ -7,13 +7,21 @@
 //
 
 import UIKit
+import SceneKit
+import SwiftyJSON
+
+let filenameDB = "database.json" //this is the file. I will write to and read from it
 
 class ViewControllerHome: UIViewController {
-
+    
+    var currentSceneID: Int = 0
+    var scenes: [SceneInfo] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Load DB
+        loadDB()
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +29,77 @@ class ViewControllerHome: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Go to creation
+        if let destination = segue.destination as? ViewControllerVFXAR  {
+            destination.appStartMode = .creation
+            destination.sceneID = currentSceneID
+            
+            // Update counter ID
+            currentSceneID = currentSceneID + 1
+            updateDBFile(filenameDB: filenameDB, counterID: currentSceneID)
+            
+            print("home - creation")
+        }
     }
-    */
+    
+    // Save DB
+    func saveDB() {
+        // Coding scenes
+        var scenesJSON: [JSON] = []
+        for scene in scenes {
+            let sceneJSON = SceneInfoToJSON(sceneInfo: scene)
+            scenesJSON.append(sceneJSON)
+        }
+        
+        // Coding final json object
+        let json: JSON =  [
+            "currentSceneID": currentSceneID,
+            "scenes": scenesJSON
+        ]
+        
+        // JSON to string
+        let text = json.rawString([.castNilToNSNull: true]) //just a text
+        
+        // Accesing to file system
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            // Setting URL
+            let fileURL = dir.appendingPathComponent(filenameDB)
+            
+            //writing
+            do {
+                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
+                print("save successful")
+            }
+            catch {/* error handling here */}
+        }
+    }
+    
+    // Load DB
+    func loadDB() {
+        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+            let fileURL = dir.appendingPathComponent(filenameDB)
+            
+            //reading
+            do {
+                let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+                print(plaintText)
+                if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
+                    do {
+                        let jsonData = try JSON(data: dataFromString)
+                        // Load current scene ID
+                        currentSceneID = jsonData["currentSceneID"].intValue
+                        // Load scenes info
+                        for scene in jsonData["scenes"].arrayValue {
+                            scenes.append(JSONtoSceneInfo(data: scene))
+                        }
+                    } catch {
+                        print("json error")
+                    }
+                }
+            }
+            catch {/* error handling here */}
+        }
+    }
 
 }
