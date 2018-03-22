@@ -62,11 +62,22 @@
                                     <outlet property="delegate" destination="jGd-n0-ejj" id="Uni-fg-YBg"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No scenes on the database" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV3-cD-blQ">
+                                <rect key="frame" x="16" y="84" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.58980089430000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="b0w-kc-Ljy"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="WH9-qa-Hxw"/>
+                    <connections>
+                        <outlet property="messageNoDataFound" destination="WV3-cD-blQ" id="Kts-N2-BI1"/>
+                        <outlet property="tableViewScenes" destination="hHX-Fx-5zb" id="SUh-ar-D1J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DqS-dF-p4d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

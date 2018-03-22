@@ -120,18 +120,19 @@ func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
 }
 
 func updateDBFile(filenameDB: String, counterID: Int) {
-    // Read
-    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-        let fileURL = dir.appendingPathComponent(filenameDB)
-        
+    // Set URL of cache directory
+    let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+    // Adding filename DB
+    let documentsPath = documentsUrl.appendingPathComponent(filenameDB)
+    if let dbUrl = documentsPath {
         // ----------------------------- Reading -------------------------------
         do {
-            let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+            let plaintText = try String(contentsOf: dbUrl, encoding: .utf8)
             if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
                 do {
                     let jsonData = try JSON(data: dataFromString)
                     
-                    // ---------------------- Save -------------------------
+                    // ------------------------ Save ---------------------------
                     
                     // Coding final json object
                     var json: JSON =  [
@@ -141,41 +142,36 @@ func updateDBFile(filenameDB: String, counterID: Int) {
                     
                     // JSON to string
                     let text = json.rawString([.castNilToNSNull: true]) //just a text
-                    
-                    // Accesing to file system
-                    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                        // Setting URL
-                        let fileURL = dir.appendingPathComponent(filenameDB)
-                        
-                        //writing
-                        do {
-                            try text?.write(to: fileURL, atomically: false, encoding: .utf8)
-                            print("save successful")
-                        }
-                        catch {/* error handling here */}
+                    //writing
+                    do {
+                        try text?.write(to: dbUrl, atomically: false, encoding: .utf8)
+                        print("Save DB successful")
+                    } catch {
+                        print("Error saving DB")
                     }
-                    
                 } catch {
                     print("json error")
                 }
             }
+        } catch {
+            print("Cannot load DB")
         }
-        catch {/* error handling here */}
     }
-    
 }
 
 func updateDBFile(filenameDB: String, newSceneFile: String, sceneId: Int) {
     var currentSceneID: Int = 0
     var scenes: [SceneInfo] = []
     
-    // Read
-    if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-        let fileURL = dir.appendingPathComponent(filenameDB)
-        
+    // Set URL of cache directory
+    let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+    // Adding filename DB
+    let documentsPath = documentsUrl.appendingPathComponent(filenameDB)
+    if let dbUrl = documentsPath {
         // ----------------------------- Reading -------------------------------
         do {
-            let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+            // Getting the data from File
+            let plaintText = try String(contentsOf: dbUrl, encoding: .utf8)
             if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
                 do {
                     let jsonData = try JSON(data: dataFromString)
@@ -214,27 +210,23 @@ func updateDBFile(filenameDB: String, newSceneFile: String, sceneId: Int) {
                         ]
                         
                         // JSON to string
-                        let text = json.rawString([.castNilToNSNull: true]) //just a text
+                        let text = json.rawString([.castNilToNSNull: true])
                         
-                        // Accesing to file system
-                        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                            // Setting URL
-                            let fileURL = dir.appendingPathComponent(filenameDB)
-                            
-                            //writing
-                            do {
-                                try text?.write(to: fileURL, atomically: false, encoding: .utf8)
-                                print("save successful")
-                            }
-                            catch {/* error handling here */}
+                        //writing
+                        do {
+                            try text?.write(to: dbUrl, atomically: false, encoding: .utf8)
+                            print("Save DB successful")
+                        } catch {
+                            print("Error saving DB")
                         }
                     }
                 } catch {
-                    print("json error")
+                    print("Json error")
                 }
             }
+        } catch {
+            print("Cannot load DB")
         }
-        catch {/* error handling here */}
     }
 
 }

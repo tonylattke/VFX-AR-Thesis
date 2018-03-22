@@ -48,16 +48,19 @@ extension ViewControllerVFXAR {
     
     // Read
     @IBAction func readButtonTouchDown(_ sender: UIButton) {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-            let fileURL = dir.appendingPathComponent(filenameToLoad)
-            
-            //reading
+        // Set URL of cache directory
+        let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+        // Adding filename DB
+        let documentsPath = documentsUrl.appendingPathComponent(filenameToLoad)
+        if let dbUrl = documentsPath {
             do {
-                let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+                // Getting the data from File
+                let plaintText = try String(contentsOf: dbUrl, encoding: .utf8)
                 print(plaintText)
+                // Text formating
                 if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
                     do {
+                        // Data to Json
                         let jsonData = try JSON(data: dataFromString)
                         
                         // Rebuild last session
@@ -92,14 +95,13 @@ extension ViewControllerVFXAR {
                             currentLUScene.objects.append(object)
                             mainNodeScene.addChildNode(object)
                         }
-                        
-                        print("load successful")
                     } catch {
                         print("json error")
                     }
                 }
+            } catch {
+                print("Cannot load DB")
             }
-            catch {/* error handling here */}
         }
     }
     
@@ -135,20 +137,20 @@ extension ViewControllerVFXAR {
             let text = json.rawString([.castNilToNSNull: true]) //just a text
             print(text)
             
-            // Accesing to file system
-            if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-                let sceneFileName = "scene\(currentLUScene.id).json"
-                // Setting URL
-                let fileURL = dir.appendingPathComponent(sceneFileName)
+            // Setting URL
+            let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+            let sceneFileName = "scene\(currentLUScene.id).json"
+            // Adding filename to URL
+            let documentsPath = documentsUrl.appendingPathComponent(sceneFileName)
+            do {
+                // Saving Scene
+                try text?.write(to: documentsPath!, atomically: false, encoding: .utf8)
+                print("save file successful")
                 
-                //writing
-                do {
-                    try text?.write(to: fileURL, atomically: false, encoding: .utf8)
-                    print("save file successful")
-                    
-                    updateDBFile(filenameDB: filenameDB, newSceneFile: sceneFileName, sceneId: currentLUScene.id)
-                }
-                catch {/* error handling here */}
+                // Update DB
+                updateDBFile(filenameDB: filenameDB, newSceneFile: sceneFileName, sceneId: currentLUScene.id)
+            } catch {
+                print("Cannot save scene")
             }
         }
     }
