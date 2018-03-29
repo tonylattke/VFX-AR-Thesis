@@ -58,12 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VFX-AR/Helpers+Functions.swift"
-            timestampString = "543449996.101674"
+            timestampString = "544027561.29233"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "calculatePosition(markIdTable:baseMark:currentMark:)"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "baseMarksVSCurrentMarks(markIdTable:baseMarks:currentMarks:)"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
@@ -74,13 +74,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VFX-AR/Helpers+Functions.swift"
-            timestampString = "543449996.101729"
+            timestampString = "544027561.292387"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "calculatePosition(markIdTable:baseMark:currentMark:)"
-            landmarkType = "9">
+            startingLineNumber = "104"
+            endingLineNumber = "104"
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VFX-AR/ViewControllerHome.swift"
-            timestampString = "543449996.101771"
+            timestampString = "544027561.292431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "112"
@@ -106,7 +106,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VFX-AR/ViewControllerHome.swift"
-            timestampString = "543449996.102113"
+            timestampString = "544027561.292479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "132"
@@ -145,6 +145,22 @@
                   offsetFromSymbolStart = "3480">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "VFX-AR/VC-VFXAR+GesturesHandle.swift"
+            timestampString = "544027561.292528"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "handleTapGesture(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

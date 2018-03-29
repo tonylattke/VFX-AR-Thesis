@@ -38,6 +38,8 @@ extension ViewControllerVFXAR {
         saveButton.isHidden = false
         readButton.isHidden = true
         resetButton.isHidden = false
+        appModeControl.isHidden = false
+        axisModeControl.isHidden = true
         
         checkBaseMarkButton.isHidden = true
         uncheckBaseMarkButton.isHidden = true
@@ -52,6 +54,8 @@ extension ViewControllerVFXAR {
         saveButton.isHidden = false
         readButton.isHidden = true
         resetButton.isHidden = false
+        appModeControl.isHidden = false
+        axisModeControl.isHidden = true
         
         checkBaseMarkButton.isHidden = true
         uncheckBaseMarkButton.isHidden = true
@@ -66,6 +70,24 @@ extension ViewControllerVFXAR {
         saveButton.isHidden = true
         readButton.isHidden = false
         resetButton.isHidden = false
+        appModeControl.isHidden = false
+        axisModeControl.isHidden = true
+        
+        checkBaseMarkButton.isHidden = true
+        uncheckBaseMarkButton.isHidden = true
+    }
+    
+    // Set edition mode
+    func setEditionModeUI() {
+        // Status bar label
+        self.title = "Object selected"
+        
+        // Buttons
+        saveButton.isHidden = true
+        readButton.isHidden = true
+        resetButton.isHidden = true
+        appModeControl.isHidden = true
+        axisModeControl.isHidden = false
         
         checkBaseMarkButton.isHidden = true
         uncheckBaseMarkButton.isHidden = true
@@ -117,4 +139,7 @@ extension ViewControllerVFXAR {
         effectsMenuIsShowing = false
     }
     
+    func updateUIStatus(title: String) {
+        self.title = title
+    }
 }

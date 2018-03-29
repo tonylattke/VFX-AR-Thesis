@@ -151,6 +151,20 @@
                                     <action selector="apModeControlChangeValueHandle:" destination="BV1-FR-VrT" eventType="valueChanged" id="fId-Jc-hk5"/>
                                 </connections>
                             </segmentedControl>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-LM-KLU">
+                                <rect key="frame" x="16" y="80" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="X"/>
+                                    <segment title="Y"/>
+                                    <segment title="Z"/>
+                                </segments>
+                                <connections>
+                                    <action selector="selectAxisInteration:" destination="BV1-FR-VrT" eventType="valueChanged" id="tKQ-He-ag0"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-0q-Js8">
                                 <rect key="frame" x="-240" y="64" width="240" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -210,10 +224,14 @@
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="i8u-fm-EZJ" appends="YES" id="WCa-FS-d10"/>
                             <outletCollection property="gestureRecognizers" destination="bbV-kl-ev1" appends="YES" id="XFB-GW-R29"/>
+                            <outletCollection property="gestureRecognizers" destination="q5o-r7-5Mv" appends="YES" id="9x0-9H-IHy"/>
+                            <outletCollection property="gestureRecognizers" destination="lhI-Se-0Xp" appends="YES" id="Utr-pv-ZZI"/>
+                            <outletCollection property="gestureRecognizers" destination="IRb-96-VQD" appends="YES" id="cWB-XS-XOd"/>
                         </connections>
                     </view>
                     <connections>
                         <outlet property="appModeControl" destination="fd6-iI-GPZ" id="S8P-hc-5f1"/>
+                        <outlet property="axisModeControl" destination="Ds8-LM-KLU" id="Tf3-Zd-1jt"/>
                         <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
                         <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
@@ -249,6 +267,21 @@
                         <action selector="handleTapGesture:" destination="BV1-FR-VrT" id="ecV-5U-E6Q"/>
                     </connections>
                 </tapGestureRecognizer>
+                <pinchGestureRecognizer id="q5o-r7-5Mv">
+                    <connections>
+                        <action selector="pinchHandle:" destination="BV1-FR-VrT" id="iL9-EG-5kK"/>
+                    </connections>
+                </pinchGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="lhI-Se-0Xp">
+                    <connections>
+                        <action selector="panHandle:" destination="BV1-FR-VrT" id="McM-16-kd8"/>
+                    </connections>
+                </panGestureRecognizer>
+                <rotationGestureRecognizer id="IRb-96-VQD">
+                    <connections>
+                        <action selector="rotationHandle:" destination="BV1-FR-VrT" id="aag-qD-XdW"/>
+                    </connections>
+                </rotationGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="229.59999999999999" y="805.54722638680664"/>
         </scene>

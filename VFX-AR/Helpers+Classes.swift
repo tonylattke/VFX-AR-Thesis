@@ -23,6 +23,22 @@ public enum AppStartMode:Int {
     case load = 1
 }
 
+// Interaction transform
+public enum InteractionMode:Int {
+    case none = 0
+    case scale = 1
+    case position = 2
+    case rotation = 3
+}
+
+// Interaction Axis
+public enum InteractionAxis:Int {
+    case all = 0
+    case x = 1
+    case y = 2
+    case z = 3
+}
+
 // SceneInfo
 public class SceneInfo {
     let id: Int

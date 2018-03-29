@@ -9,6 +9,38 @@
 import Foundation
 import UIKit
 import SwiftyJSON
+import SceneKit
+
+// From SCNMatrix4 to matrix_float4x4
+func SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4) -> simd_float4x4 {
+    var resultMatrix = simd_float4x4.init()
+    
+    // Column 0
+    resultMatrix.columns.0.x = sourceMatrix.m11
+    resultMatrix.columns.0.y = sourceMatrix.m12
+    resultMatrix.columns.0.z = sourceMatrix.m13
+    resultMatrix.columns.0.w = sourceMatrix.m14
+    
+    // Column 1
+    resultMatrix.columns.1.x = sourceMatrix.m21
+    resultMatrix.columns.1.y = sourceMatrix.m22
+    resultMatrix.columns.1.z = sourceMatrix.m23
+    resultMatrix.columns.1.w = sourceMatrix.m24
+    
+    // Column 2
+    resultMatrix.columns.2.x = sourceMatrix.m31
+    resultMatrix.columns.2.y = sourceMatrix.m32
+    resultMatrix.columns.2.z = sourceMatrix.m33
+    resultMatrix.columns.2.w = sourceMatrix.m34
+    
+    // Column 3
+    resultMatrix.columns.3.x = sourceMatrix.m41
+    resultMatrix.columns.3.y = sourceMatrix.m42
+    resultMatrix.columns.3.z = sourceMatrix.m43
+    resultMatrix.columns.3.w = sourceMatrix.m44
+    
+    return resultMatrix
+}
 
 // Compare the base marks with the current marks
 func baseMarksVSCurrentMarks(markIdTable: [UUID: UUID?], baseMarks: [UUID], currentMarks: [UUID]) -> Float {

@@ -68,12 +68,30 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
             default:
                 print("TODO")
             }
+            
+            hideEffectsMenu()
+            UIView.animate(withDuration: 0.2, animations: {self.view.layoutIfNeeded()})
         }
         
         // Settings
         if tableView == settigsMenu {
             let selectedOption = identifiersSettings[indexPath.row]
-            print(selectedOption)
+            switch selectedOption {
+            case "T":
+                interactionMode = .position
+                updateUIStatus(title: "Edit - Position")
+            case "S":
+                interactionMode = .scale
+                updateUIStatus(title: "Edit - Scale")
+            case "R":
+                interactionMode = .rotation
+                updateUIStatus(title: "Edit - Rotation")
+            default:
+                print("default")
+            }
+            
+            hideSettingsMenu()
+            UIView.animate(withDuration: 0.2, animations: {self.view.layoutIfNeeded()})
         }
     }
 

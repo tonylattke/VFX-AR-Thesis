@@ -182,4 +182,17 @@ extension ViewControllerVFXAR {
             break
         }
     }
+    
+    @IBAction func selectAxisInteration(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 1:
+            interactionAxis = .x
+        case 2:
+            interactionAxis = .y
+        case 3:
+            interactionAxis = .z
+        default:
+            interactionAxis = .all
+        }
+    }
 }

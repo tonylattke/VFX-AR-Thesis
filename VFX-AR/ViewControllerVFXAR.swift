@@ -63,6 +63,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var appModeControl: UISegmentedControl!
+    @IBOutlet weak var axisModeControl: UISegmentedControl!
     
     // CoreLocation
     var saveFirstCoordinates = false
@@ -82,6 +83,10 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     
     // Filename to load
     var filenameToLoad: String = ""
+    
+    var interactionAxis: InteractionAxis = .all
+    var interactionMode: InteractionMode = .none
+    var selectedObject: LUInteractivObject?    
     
     // Init
     override func viewDidLoad() {
