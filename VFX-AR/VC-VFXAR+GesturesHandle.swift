@@ -85,7 +85,7 @@ extension ViewControllerVFXAR {
                 }
             } else {
                 // Save transform and deselect object
-                selectedObject?.saveTransformBackup()
+                selectedObject?.saveCurrentState()
                 selectedObject = nil
                 
                 interactionMode = .none
@@ -208,7 +208,6 @@ extension ViewControllerVFXAR {
                 if selectedObject?.name == "InteractivObject" {
                     switch interactionMode {
                     case .scale:
-                        print(interactionAxis)
                         switch interactionAxis {
                         case .x: // X
                             if (selectedObject?.scaleFirstTime)! {

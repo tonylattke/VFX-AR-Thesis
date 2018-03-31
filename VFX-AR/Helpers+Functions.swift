@@ -42,6 +42,37 @@ func SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4) -> simd_float4x4 {
     return resultMatrix
 }
 
+// From SCNMatrix4 to matrix_float4x4
+func simd_float4x4ToSCNMatrix4(sourceMatrix: simd_float4x4) -> SCNMatrix4 {
+    var resultMatrix = SCNMatrix4()
+    
+    // Column 0
+    resultMatrix.m11 = sourceMatrix.columns.0.x
+    resultMatrix.m12 = sourceMatrix.columns.0.y
+    resultMatrix.m13 = sourceMatrix.columns.0.z
+    resultMatrix.m14 = sourceMatrix.columns.0.w
+    
+    // Column 1
+    resultMatrix.m21 = sourceMatrix.columns.1.x
+    resultMatrix.m22 = sourceMatrix.columns.1.y
+    resultMatrix.m23 = sourceMatrix.columns.1.z
+    resultMatrix.m24 = sourceMatrix.columns.1.w
+    
+    // Column 2
+    resultMatrix.m31 = sourceMatrix.columns.2.x
+    resultMatrix.m32 = sourceMatrix.columns.2.y
+    resultMatrix.m33 = sourceMatrix.columns.2.z
+    resultMatrix.m34 = sourceMatrix.columns.2.w
+    
+    // Column 3
+    resultMatrix.m41 = sourceMatrix.columns.3.x
+    resultMatrix.m42 = sourceMatrix.columns.3.y
+    resultMatrix.m43 = sourceMatrix.columns.3.z
+    resultMatrix.m44 = sourceMatrix.columns.3.w
+    
+    return resultMatrix
+}
+
 // Compare the base marks with the current marks
 func baseMarksVSCurrentMarks(markIdTable: [UUID: UUID?], baseMarks: [UUID], currentMarks: [UUID]) -> Float {
     if baseMarks.count > 0 {

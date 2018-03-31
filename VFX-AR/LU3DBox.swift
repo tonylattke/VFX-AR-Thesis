@@ -15,7 +15,7 @@ public class LU3DBox: LUInteractivObject {
     
     // Init
     init(transform: simd_float4x4, width: CGFloat, height: CGFloat, length: CGFloat, chamferRadius: CGFloat) {
-        super.init(className: "LU3DBox", transform: transform)
+        super.init(className: "LU3DBox", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
 
         geometry = SCNBox(width: width, height: height, length: length, chamferRadius: chamferRadius)
         

@@ -22,15 +22,13 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var effectsMenuIsShowing = false
     @IBOutlet weak var effectsMenu: UITableView!
     @IBOutlet weak var leadingConstraintLeft: NSLayoutConstraint!
-    let optionsEffects = ["Box","Rain", "Fire", "Smoke"]
-    let identifiersEffects = ["Box","rain","fire","smoke"]
+    let optionsEffects = ["Box","Text","Rain", "Fire", "Smoke"]
     
     // Menu - Settings
     var settingsMenuIsShowing = false
     @IBOutlet weak var settigsMenu: UITableView!
     @IBOutlet weak var leadingConstraintRight: NSLayoutConstraint!
     let optionsSettings = ["Translate", "Scale", "Rotate"]
-    let identifiersSettings = ["T","S","R"]
     
     @IBOutlet weak var checkBaseMarkButton: UIButton!
     @IBOutlet weak var uncheckBaseMarkButton: UIButton!

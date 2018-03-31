@@ -48,7 +48,7 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Effects
         if tableView == effectsMenu {
-            let selectedEffect = identifiersEffects[indexPath.row]
+            let selectedEffect = optionsEffects[indexPath.row]
             switch selectedEffect {
             case "Box":
                 guard let currentFrame = sceneView.session.currentFrame else {
@@ -75,19 +75,20 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
         
         // Settings
         if tableView == settigsMenu {
-            let selectedOption = identifiersSettings[indexPath.row]
+            let selectedOption = optionsSettings[indexPath.row]
             switch selectedOption {
-            case "T":
+            case "Translate":
                 interactionMode = .position
-                updateUIStatus(title: "Edit - Position")
-            case "S":
+                updateUIStatus(title: "Edit - Translation")
+            case "Scale":
                 interactionMode = .scale
                 updateUIStatus(title: "Edit - Scale")
-            case "R":
+            case "Rotate":
                 interactionMode = .rotation
                 updateUIStatus(title: "Edit - Rotation")
             default:
                 print("default")
+                //selectedObject.manage(selectedOption) objeto cambia de estatus de setting TODO
             }
             
             hideSettingsMenu()

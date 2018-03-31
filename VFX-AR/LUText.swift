@@ -20,7 +20,7 @@ public class LUText: LUInteractivObject {
     init(transform: simd_float4x4, message: String) {
         self.message = message
         
-        super.init(className: "LUText", transform: transform)
+        super.init(className: "LUText", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
         
         geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
         

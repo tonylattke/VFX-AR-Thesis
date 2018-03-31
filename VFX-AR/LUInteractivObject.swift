@@ -24,12 +24,13 @@ public class LUInteractivObject: LUObject {
     
     // Transformation Backup
     var simdTransformBackup = simd_float4x4.init()
+    var simdPivotBackup = simd_float4x4.init()
     
     // Edition controls
     var scaleFirstTime: Bool = true
     var rotationFirstTime: Bool = true
     
-    init(className: String, transform: simd_float4x4) {
+    init(className: String, transform: simd_float4x4, pivot: simd_float4x4) {
         //model = SCNParticleSystem()
         self.className = className
         
@@ -46,12 +47,18 @@ public class LUInteractivObject: LUObject {
         rotateFactor.y = 0
         rotateFactor.z = 0
         
+        simdPivotBackup[0].x = 1
+        simdPivotBackup[1].y = 1
+        simdPivotBackup[2].z = 1
+        simdPivotBackup[3].w = 1
+        
         // Translate
         translateFactor.x = 0
         translateFactor.y = 0
         translateFactor.z = 0
         
         self.simdTransform = transform
+        self.simdPivot = pivot
     }
     
     // Init - Default coder
@@ -85,7 +92,8 @@ public class LUInteractivObject: LUObject {
         simdTransformBackup[3].w = simdTransform[3].w
     }
     
-    func saveTransformBackup(){
+    func saveCurrentState(){
+        // --------------------------- Transform ---------------------------- //
         // Column 0
         simdTransformBackup[0].x = simdTransform[0].x
         simdTransformBackup[0].y = simdTransform[0].y
@@ -109,6 +117,33 @@ public class LUInteractivObject: LUObject {
         simdTransformBackup[3].y = simdTransform[3].y
         simdTransformBackup[3].z = simdTransform[3].z
         simdTransformBackup[3].w = simdTransform[3].w
+        
+        // ----------------------------- Pivot ------------------------------ //
+        // Column 0
+        simdPivotBackup[0].x = simdPivot[0].x
+        simdPivotBackup[0].y = simdPivot[0].y
+        simdPivotBackup[0].z = simdPivot[0].z
+        simdPivotBackup[0].w = simdPivot[0].w
+        
+        // Column 1
+        simdPivotBackup[1].x = simdPivot[1].x
+        simdPivotBackup[1].y = simdPivot[1].y
+        simdPivotBackup[1].z = simdPivot[1].z
+        simdPivotBackup[1].w = simdPivot[1].w
+        
+        // Column 2
+        simdPivotBackup[2].x = simdPivot[2].x
+        simdPivotBackup[2].y = simdPivot[2].y
+        simdPivotBackup[2].z = simdPivot[2].z
+        simdPivotBackup[2].w = simdPivot[2].w
+        
+        // Column 3
+        simdPivotBackup[3].x = simdPivot[3].x
+        simdPivotBackup[3].y = simdPivot[3].y
+        simdPivotBackup[3].z = simdPivot[3].z
+        simdPivotBackup[3].w = simdPivot[3].w
+        
+        // ------------------------ Transform Factors ----------------------- //
         
         // Scale
         scaleFactor.x = 1
@@ -143,7 +178,7 @@ public class LUInteractivObject: LUObject {
         simdTransform = matrix_multiply(simdTransformBackup, scaleMatrix)
         
         // Rotate
-        var rotateMatrix = SCNMatrix4Identity
+        var rotateMatrix = simd_float4x4ToSCNMatrix4(sourceMatrix: simdPivotBackup)
         rotateMatrix = SCNMatrix4Rotate(rotateMatrix, rotateFactor.x, 1, 0, 0)
         rotateMatrix = SCNMatrix4Rotate(rotateMatrix, rotateFactor.y, 0, 1, 0)
         rotateMatrix = SCNMatrix4Rotate(rotateMatrix, rotateFactor.z, 0, 0, 1)

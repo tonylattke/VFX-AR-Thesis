@@ -183,6 +183,7 @@ func JSONToLUComparedPair(data: JSON) -> LUComparedPair {
 func LUInteractivObjectToJSON(object: LUInteractivObject) -> JSON {
     let result: JSON = [
         "transform": simd_float4x4ToJSON(matrix: object.simdTransform),
+        "pivot": simd_float4x4ToJSON(matrix: object.simdPivot),
         "className": object.className!,
         "subClassInfo": LUInteractiveObjectSubClassToJSON(object: object)
     ]
@@ -204,9 +205,12 @@ func JSONToLUInteractivObject(data: JSON) -> LUInteractivObject {
     // Otherwise
     default:
         result = LUInteractivObject(className: data["className"].string!,
-                                    transform: jsonToSimd_float4x4(data: data["transform"]))
+                                    transform: jsonToSimd_float4x4(data: data["transform"]),
+                                    pivot: jsonToSimd_float4x4(data: data["pivot"]))
     }
     result.loadedTransform = jsonToSimd_float4x4(data: data["transform"])
+    result.simdPivot = jsonToSimd_float4x4(data: data["pivot"])
+    result.simdPivotBackup = jsonToSimd_float4x4(data: data["pivot"])
     
     return result
 }
