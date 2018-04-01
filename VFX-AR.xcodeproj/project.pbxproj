@@ -26,6 +26,9 @@
 		8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */; };
 		8C4DE28B1FE1EDE300832EB3 /* LUMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */; };
 		8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */; };
+		8C52C3A120718D1300DCDEE4 /* LUSmoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */; };
+		8C52C3A52071911800DCDEE4 /* LUFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52C3A42071911800DCDEE4 /* LUFire.swift */; };
+		8C72796620712AB400C4932D /* LURain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72796520712AB400C4932D /* LURain.swift */; };
 		8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */; };
 		8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FB203C530200AD350D /* Helpers+Classes.swift */; };
 		8C8A75FE203C574100AD350D /* VC-VFXAR+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FD203C574100AD350D /* VC-VFXAR+UI.swift */; };
@@ -88,6 +91,9 @@
 		8C4DE2881FE1EC6F00832EB3 /* LUObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUObject.swift; sourceTree = "<group>"; };
 		8C4DE28A1FE1EDE300832EB3 /* LUMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUMark.swift; sourceTree = "<group>"; };
 		8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUInteractivObject.swift; sourceTree = "<group>"; };
+		8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUSmoke.swift; sourceTree = "<group>"; };
+		8C52C3A42071911800DCDEE4 /* LUFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUFire.swift; sourceTree = "<group>"; };
+		8C72796520712AB400C4932D /* LURain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LURain.swift; sourceTree = "<group>"; };
 		8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Extensions.swift"; sourceTree = "<group>"; };
 		8C8A75FB203C530200AD350D /* Helpers+Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Classes.swift"; sourceTree = "<group>"; };
 		8C8A75FD203C574100AD350D /* VC-VFXAR+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+UI.swift"; sourceTree = "<group>"; };
@@ -232,6 +238,8 @@
 				8CBE532820220A38004E5ECF /* LU3DBox.swift */,
 				8C209353206D33F300032F42 /* LUText.swift */,
 				8C2093552070417B00032F42 /* LUSparks.swift */,
+				8C72796520712AB400C4932D /* LURain.swift */,
+				8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */,
 			);
 			name = LUInteractiveObjectsSubClass;
 			sourceTree = "<group>";
@@ -270,6 +278,7 @@
 				8C4DE28F1FE1EF4500832EB3 /* VC-Extensions */,
 				8C4DE28D1FE1EF0C00832EB3 /* LU */,
 				8CCC53B41FC39E7900EC410C /* Resources */,
+				8C52C3A42071911800DCDEE4 /* LUFire.swift */,
 			);
 			path = "VFX-AR";
 			sourceTree = "<group>";
@@ -616,15 +625,18 @@
 				8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */,
 				8CCC53831FC361C600EC410C /* ViewControllerVFXAR.swift in Sources */,
 				8C4DE2891FE1EC6F00832EB3 /* LUObject.swift in Sources */,
+				8C52C3A120718D1300DCDEE4 /* LUSmoke.swift in Sources */,
 				8C4DE2851FE1E56200832EB3 /* VC-VFXAR+CL.swift in Sources */,
 				8C3631D120615B2F00F01168 /* VC-Home+Buttons.swift in Sources */,
 				8C3F9D182018E963000FEEFA /* VC-VFXAR+Buttons.swift in Sources */,
+				8C72796620712AB400C4932D /* LURain.swift in Sources */,
 				8C8A7608204ACB7400AD350D /* ViewControllerHome.swift in Sources */,
 				8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */,
 				8C2093562070417B00032F42 /* LUSparks.swift in Sources */,
 				8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */,
 				8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */,
 				8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */,
+				8C52C3A52071911800DCDEE4 /* LUFire.swift in Sources */,
 				8C3F9D162018E8FC000FEEFA /* LUCoders.swift in Sources */,
 				8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */,
 				8C209354206D33F300032F42 /* LUText.swift in Sources */,

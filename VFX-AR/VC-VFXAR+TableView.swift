@@ -71,6 +71,34 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                 
                 currentLUScene.objects.append(text)
                 mainNodeScene.addChildNode(text)
+            case "Sparks":
+                let sparks = LUSparks(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                           distance: distanceWithCamera),
+                                      amountOfParticles: 1000)
+                
+                currentLUScene.objects.append(sparks)
+                mainNodeScene.addChildNode(sparks)
+            case "Rain":
+                let rain = LURain(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                       distance: distanceWithCamera),
+                                  amountOfParticles: 1000)
+                
+                currentLUScene.objects.append(rain)
+                mainNodeScene.addChildNode(rain)
+            case "Smoke":
+                let smoke = LUSmoke(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                         distance: distanceWithCamera),
+                                    amountOfParticles: 20)
+                
+                currentLUScene.objects.append(smoke)
+                mainNodeScene.addChildNode(smoke)
+            case "Fire":
+                let fire = LUFire(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                       distance: distanceWithCamera),
+                                  amountOfParticles: 455)
+                
+                currentLUScene.objects.append(fire)
+                mainNodeScene.addChildNode(fire)
             default:
                 print("TODO")
             }
@@ -95,12 +123,21 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
             default:
                 currentSelectedAttributeName = selectedOption
                 currentSelectedAttributeType =  (selectedObject?.manageOptions(selectedOption: selectedOption))!
-                
-                switch currentSelectedAttributeType {
+                let type = currentSelectedAttributeType?.name
+                switch type! {
                 case "String":
                     updateUIStatus(title: "Edit - Text")
                     textField.text = selectedObject?.getValue(attributeName: currentSelectedAttributeName)
                     textEditorView.isHidden = false
+                case "Float":
+                    if let rangeNumber = currentSelectedAttributeType as? RangeNumber {
+                        updateUIStatus(title: "Edit - Number")
+                        let value = selectedObject?.getValue(attributeName: currentSelectedAttributeName)
+                        numberSliderControl.value = Float(value!)!
+                        numberSliderControl.minimumValue = rangeNumber.min
+                        numberSliderControl.maximumValue = rangeNumber.max
+                        numberEditorView.isHidden = false
+                    }
                 default:
                     print("No implemented")
                 }

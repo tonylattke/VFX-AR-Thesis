@@ -14,7 +14,7 @@ import FontAwesome_swift
 import SwiftyJSON
 
 class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
-
+    
     // AR
     @IBOutlet weak var sceneView: ARSCNView!
     
@@ -22,7 +22,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var effectsMenuIsShowing = false
     @IBOutlet weak var effectsMenu: UITableView!
     @IBOutlet weak var leadingConstraintLeft: NSLayoutConstraint!
-    let optionsEffects = ["Box","Text","Rain", "Fire", "Smoke"]
+    let optionsEffects = ["Box","Text","Sparks","Rain","Smoke","Fire"]
     
     // Menu - Settings
     var settingsMenuIsShowing = false
@@ -63,10 +63,16 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var appModeControl: UISegmentedControl!
     @IBOutlet weak var axisModeControl: UISegmentedControl!
+    
     @IBOutlet weak var textEditorView: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var saveTextButton: UIButton!
     @IBOutlet weak var cancelTextButton: UIButton!
+    
+    @IBOutlet weak var numberEditorView: UIView!
+    @IBOutlet weak var numberSliderControl: UISlider!
+    @IBOutlet weak var saveEditionNumberButton: UIButton!
+    @IBOutlet weak var cancelEditionNumberButton: UIButton!
     
     // CoreLocation
     var saveFirstCoordinates = false
@@ -92,7 +98,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var selectedObject: LUInteractivObject?
     
     var currentSelectedAttributeName: String = ""
-    var currentSelectedAttributeType: String = ""
+    var currentSelectedAttributeType: ValueType?
     
     // Init
     override func viewDidLoad() {
@@ -153,7 +159,6 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
             
             print("load mode started")
         }
-        
     }
     
     // Run

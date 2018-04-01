@@ -32,6 +32,11 @@ extension ViewControllerVFXAR {
         saveTextButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
         cancelTextButton.titleLabel?.font = font
         cancelTextButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
+        
+        saveEditionNumberButton.titleLabel?.font = font
+        saveEditionNumberButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
+        cancelEditionNumberButton.titleLabel?.font = font
+        cancelEditionNumberButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
     }
     
     // Set Idle mode

@@ -49,3 +49,25 @@ public class SceneInfo {
         self.name = name
     }
 }
+
+public class ValueType {
+    let name: String
+    let rangeType: String
+    
+    init(name: String, rangeType: String) {
+        self.name = name
+        self.rangeType = rangeType
+    }
+}
+
+public class RangeNumber: ValueType {
+    let min: Float
+    let max: Float
+    
+    init(min: Float, max: Float) {
+        self.min = min
+        self.max = max
+        super.init(name: "Float", rangeType: "RangeNumber")
+    }
+    
+}

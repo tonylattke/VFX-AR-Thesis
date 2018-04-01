@@ -195,6 +195,35 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-gv-fgF">
+                                <rect key="frame" x="16" y="446" width="343" height="93"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-EB-rt3">
+                                        <rect key="frame" x="-2" y="31" width="347" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="numberSliderHandle:" destination="BV1-FR-VrT" eventType="valueChanged" id="c4t-yQ-A1Z"/>
+                                        </connections>
+                                    </slider>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5w-WM-UdC">
+                                        <rect key="frame" x="192" y="63" width="48" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelNumberEditionHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="TcH-Gh-ja8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U70-eN-BXU">
+                                        <rect key="frame" x="104" y="63" width="34" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveNumberEditionHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="vTb-TF-cNE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-0q-Js8">
                                 <rect key="frame" x="-240" y="64" width="240" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -262,16 +291,20 @@
                     <connections>
                         <outlet property="appModeControl" destination="fd6-iI-GPZ" id="S8P-hc-5f1"/>
                         <outlet property="axisModeControl" destination="Ds8-LM-KLU" id="Tf3-Zd-1jt"/>
+                        <outlet property="cancelEditionNumberButton" destination="t5w-WM-UdC" id="4kr-uL-Gqz"/>
                         <outlet property="cancelTextButton" destination="TwM-kI-HjI" id="ob3-Fe-VJ1"/>
                         <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
                         <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
                         <outlet property="leadingConstraintRight" destination="3iO-cx-Gny" id="k0D-QR-BCb"/>
                         <outlet property="letToRightGesture" destination="bbV-kl-ev1" id="c43-NM-UIM"/>
+                        <outlet property="numberEditorView" destination="gH6-gv-fgF" id="Hyb-wn-0xm"/>
+                        <outlet property="numberSliderControl" destination="GfN-EB-rt3" id="B63-e3-2Qg"/>
                         <outlet property="readButton" destination="wCg-Qq-Axb" id="k4q-kh-t6Y"/>
                         <outlet property="resetButton" destination="8G7-1y-VpX" id="wta-eA-ujP"/>
                         <outlet property="rightToLeftGesture" destination="i8u-fm-EZJ" id="RZO-2z-4nl"/>
                         <outlet property="saveButton" destination="xvu-la-LA7" id="LzM-w4-dzb"/>
+                        <outlet property="saveEditionNumberButton" destination="U70-eN-BXU" id="sYC-8P-Cpa"/>
                         <outlet property="saveTextButton" destination="M25-E1-id5" id="Sjs-vE-MZd"/>
                         <outlet property="sceneView" destination="L99-Ov-Rtp" id="aMC-cb-Nie"/>
                         <outlet property="settigsMenu" destination="8Zw-5M-dLr" id="2ud-TC-41s"/>

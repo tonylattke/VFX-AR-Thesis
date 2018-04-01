@@ -200,7 +200,7 @@ extension ViewControllerVFXAR {
         selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: textField.text!)
         
         currentSelectedAttributeName = ""
-        currentSelectedAttributeType = ""
+        currentSelectedAttributeType = nil
         
         textEditorView.isHidden = true
         updateUIStatus(title: "Edit Object")
@@ -210,11 +210,36 @@ extension ViewControllerVFXAR {
     
     @IBAction func editTextCancelHandle(_ sender: UIButton) {
         currentSelectedAttributeName = ""
-        currentSelectedAttributeType = ""
+        currentSelectedAttributeType = nil
         
         textEditorView.isHidden = true
         updateUIStatus(title: "Edit Object")
         
         self.view.endEditing(true)
+    }
+    
+    @IBAction func numberSliderHandle(_ sender: UISlider) {
+        selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: String(numberSliderControl.value))
+    }
+    
+    @IBAction func saveNumberEditionHandle(_ sender: UIButton) {
+        selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: String(numberSliderControl.value))
+        
+        currentSelectedAttributeName = ""
+        currentSelectedAttributeType = nil
+        
+        numberEditorView.isHidden = true
+        
+        updateUIStatus(title: "Edit Object")
+    }
+    
+    @IBAction func cancelNumberEditionHandle(_ sender: UIButton) {
+        
+        currentSelectedAttributeName = ""
+        currentSelectedAttributeType = nil
+        
+        numberEditorView.isHidden = true
+        
+        updateUIStatus(title: "Edit Object")
     }
 }

@@ -30,7 +30,7 @@ public class LUInteractivObject: LUObject {
     var rotationFirstTime: Bool = true
     
     // Options Settings [Name:Type]
-    var optionsSettings: [String:String] = [:]
+    var optionsSettings: [String:ValueType] = [:]
     
     init(className: String, transform: simd_float4x4, pivot: simd_float4x4) {
         //model = SCNParticleSystem()
@@ -192,7 +192,7 @@ public class LUInteractivObject: LUObject {
     }
     
     // Get type of attribute
-    func manageOptions(selectedOption: String) -> String {
+    func manageOptions(selectedOption: String) -> ValueType {
         return optionsSettings[selectedOption]!
     }
 

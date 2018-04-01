@@ -9,7 +9,6 @@
 import Foundation
 import ARKit
 import SceneKit
-import CoreLocation
 
 public class LUText: LUInteractivObject {
     
@@ -32,7 +31,7 @@ public class LUText: LUInteractivObject {
         // Assign material
         geometry?.materials = [material]
         
-        optionsSettings["Edit Text"] = "String"
+        optionsSettings["Edit Text"] = ValueType(name: "String", rangeType: "None")
     }
     
     // Init - Default coder

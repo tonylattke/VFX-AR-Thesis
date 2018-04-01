@@ -9,7 +9,6 @@
 import Foundation
 import ARKit
 import SceneKit
-import CoreLocation
 
 public class LU3DBox: LUInteractivObject {
     

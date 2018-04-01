@@ -1,5 +1,5 @@
 //
-//  LUSparks.swift
+//  LUSmoke.swift
 //  VFX-AR
 //
 //  Created by Tony Lattke on 01.04.18.
@@ -10,17 +10,17 @@ import Foundation
 import ARKit
 import SceneKit
 
-public class LUSparks: LUInteractivObject {
+public class LUSmoke: LUInteractivObject {
     
     var particleSystem: SCNParticleSystem?
     
     // Init
     init(transform: simd_float4x4, amountOfParticles: Float) {
-        super.init(className: "LUSparks", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
+        super.init(className: "LUSmoke", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
         
-        particleSystem = SCNParticleSystem(named: "Sparks", inDirectory: "art.scnassets")
+        particleSystem = SCNParticleSystem(named: "Smoke", inDirectory: "art.scnassets")
         self.addParticleSystem(particleSystem!)
-        particleSystem?.birthRate =  CGFloat(amountOfParticles)
+        particleSystem?.birthRate = CGFloat(amountOfParticles)
         
         geometry = SCNSphere(radius: 0.1)
         
@@ -33,7 +33,7 @@ public class LUSparks: LUInteractivObject {
         // Assign material
         geometry?.materials = [material]
         
-        optionsSettings["Amount of particles"] = RangeNumber(min: 1000, max: 10000)
+        optionsSettings["Amount of particles"] = RangeNumber(min: 10, max: 100)
     }
     
     // Init - Default coder
@@ -45,9 +45,6 @@ public class LUSparks: LUInteractivObject {
         switch name {
         case "Amount of particles":
             particleSystem?.birthRate = CGFloat(Float(value)!)
-        case "TODO":
-            //self.attribute = value Float(value), Int(value)
-            print("TODO")
         default:
             print("No available Attribute")
         }
@@ -64,3 +61,4 @@ public class LUSparks: LUInteractivObject {
     }
     
 }
+
