@@ -202,6 +202,9 @@ func JSONToLUInteractivObject(data: JSON) -> LUInteractivObject {
                          height: CGFloat(data["subClassInfo"]["height"].floatValue),
                          length: CGFloat(data["subClassInfo"]["length"].floatValue),
                          chamferRadius: CGFloat(data["subClassInfo"]["chamferRadius"].floatValue))
+    case "LUText":
+        result = LUText(transform: matrix_identity_float4x4,
+                        message: data["subClassInfo"]["message"].stringValue)
     // Otherwise
     default:
         result = LUInteractivObject(className: data["className"].string!,
@@ -217,7 +220,7 @@ func JSONToLUInteractivObject(data: JSON) -> LUInteractivObject {
 
 // LUInteractiveObjectSubClass to JSON
 func LUInteractiveObjectSubClassToJSON(object: LUInteractivObject) -> JSON {
-    let result: JSON
+    var result: JSON = []
     switch object.className {
     // LU3DObject
     case "LU3DBox"?:
@@ -227,6 +230,13 @@ func LUInteractiveObjectSubClassToJSON(object: LUInteractivObject) -> JSON {
             "length": (object.geometry as! SCNBox).length,
             "chamferRadius": (object.geometry as! SCNBox).chamferRadius
         ]
+    // LUText
+    case "LUText"?:
+        if let luText = object as? LUText {
+            result = [
+                "message": luText.message
+            ]
+        }
     // Otherwise
     default:
         result = []

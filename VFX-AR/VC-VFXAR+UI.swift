@@ -27,6 +27,11 @@ extension ViewControllerVFXAR {
         checkBaseMarkButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
         uncheckBaseMarkButton.titleLabel?.font = font
         uncheckBaseMarkButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
+        
+        saveTextButton.titleLabel?.font = font
+        saveTextButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
+        cancelTextButton.titleLabel?.font = font
+        cancelTextButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
     }
     
     // Set Idle mode

@@ -13,7 +13,6 @@ import CoreLocation
 
 public class LUInteractivObject: LUObject {
     
-    // var model: SCNParticleSystem? // TODO
     var className: String?
     var loadedTransform: simd_float4x4?
     
@@ -29,6 +28,9 @@ public class LUInteractivObject: LUObject {
     // Edition controls
     var scaleFirstTime: Bool = true
     var rotationFirstTime: Bool = true
+    
+    // Options Settings [Name:Type]
+    var optionsSettings: [String:String] = [:]
     
     init(className: String, transform: simd_float4x4, pivot: simd_float4x4) {
         //model = SCNParticleSystem()
@@ -47,10 +49,7 @@ public class LUInteractivObject: LUObject {
         rotateFactor.y = 0
         rotateFactor.z = 0
         
-        simdPivotBackup[0].x = 1
-        simdPivotBackup[1].y = 1
-        simdPivotBackup[2].z = 1
-        simdPivotBackup[3].w = 1
+        simdPivotBackup = matrix_identity_float4x4
         
         // Translate
         translateFactor.x = 0
@@ -192,4 +191,16 @@ public class LUInteractivObject: LUObject {
         simdTransform[3].z = positionBackup.z + translateFactor.z
     }
     
+    // Get type of attribute
+    func manageOptions(selectedOption: String) -> String {
+        return optionsSettings[selectedOption]!
+    }
+
+    func updateAttribute(name: String, value: String) {
+        
+    }
+    
+    func getValue(attributeName: String) -> String {
+        return ""
+    }
 }

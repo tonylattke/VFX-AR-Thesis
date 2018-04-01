@@ -13,6 +13,7 @@
 		8C1B7E03202C6A1B005D40E0 /* Helpers+Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */; };
 		8C1B7E06202CBAFC005D40E0 /* VC-VFXAR+LU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C1B7E05202CBAFC005D40E0 /* VC-VFXAR+LU.swift */; };
 		8C209354206D33F300032F42 /* LUText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C209353206D33F300032F42 /* LUText.swift */; };
+		8C2093562070417B00032F42 /* LUSparks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2093552070417B00032F42 /* LUSparks.swift */; };
 		8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631CD2061306700F01168 /* VC-Home+TableView.swift */; };
 		8C3631D120615B2F00F01168 /* VC-Home+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631D020615B2F00F01168 /* VC-Home+Buttons.swift */; };
 		8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C3631D2206167A200F01168 /* VC-ARCL+Buttons.swift */; };
@@ -74,6 +75,7 @@
 		8C1B7E02202C6A1B005D40E0 /* Helpers+Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Functions.swift"; sourceTree = "<group>"; };
 		8C1B7E05202CBAFC005D40E0 /* VC-VFXAR+LU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-VFXAR+LU.swift"; sourceTree = "<group>"; };
 		8C209353206D33F300032F42 /* LUText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUText.swift; sourceTree = "<group>"; };
+		8C2093552070417B00032F42 /* LUSparks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUSparks.swift; sourceTree = "<group>"; };
 		8C3631CD2061306700F01168 /* VC-Home+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-Home+TableView.swift"; sourceTree = "<group>"; };
 		8C3631D020615B2F00F01168 /* VC-Home+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-Home+Buttons.swift"; sourceTree = "<group>"; };
 		8C3631D2206167A200F01168 /* VC-ARCL+Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VC-ARCL+Buttons.swift"; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			children = (
 				8CBE532820220A38004E5ECF /* LU3DBox.swift */,
 				8C209353206D33F300032F42 /* LUText.swift */,
+				8C2093552070417B00032F42 /* LUSparks.swift */,
 			);
 			name = LUInteractiveObjectsSubClass;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				8C3F9D182018E963000FEEFA /* VC-VFXAR+Buttons.swift in Sources */,
 				8C8A7608204ACB7400AD350D /* ViewControllerHome.swift in Sources */,
 				8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */,
+				8C2093562070417B00032F42 /* LUSparks.swift in Sources */,
 				8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */,
 				8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */,
 				8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */,

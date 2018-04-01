@@ -6,7 +6,6 @@
 //  Copyright © 2018 HSB. All rights reserved.
 //
 
-
 import Foundation
 import ARKit
 import SceneKit
@@ -22,7 +21,7 @@ public class LUText: LUInteractivObject {
         
         super.init(className: "LUText", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
         
-        geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        geometry = SCNSphere(radius: 0.1)
         
         // Create material
         let material = SCNMaterial()
@@ -32,11 +31,31 @@ public class LUText: LUInteractivObject {
         
         // Assign material
         geometry?.materials = [material]
+        
+        optionsSettings["Edit Text"] = "String"
     }
     
     // Init - Default coder
     required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func updateAttribute(name: String, value: String) {
+        switch name {
+        case "Edit Text":
+            self.message = value
+        default:
+            print("No available Attribute")
+        }
+    }
+    
+    override func getValue(attributeName: String) -> String {
+        switch attributeName {
+        case "Edit Text":
+            return message
+        default:
+            return ""
+        }
     }
     
 }

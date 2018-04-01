@@ -195,4 +195,26 @@ extension ViewControllerVFXAR {
             interactionAxis = .all
         }
     }
+    
+    @IBAction func editTextSaveHandle(_ sender: UIButton) {
+        selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: textField.text!)
+        
+        currentSelectedAttributeName = ""
+        currentSelectedAttributeType = ""
+        
+        textEditorView.isHidden = true
+        updateUIStatus(title: "Edit Object")
+        
+        self.view.endEditing(true)
+    }
+    
+    @IBAction func editTextCancelHandle(_ sender: UIButton) {
+        currentSelectedAttributeName = ""
+        currentSelectedAttributeType = ""
+        
+        textEditorView.isHidden = true
+        updateUIStatus(title: "Edit Object")
+        
+        self.view.endEditing(true)
+    }
 }

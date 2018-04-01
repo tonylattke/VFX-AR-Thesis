@@ -165,6 +165,36 @@
                                     <action selector="selectAxisInteration:" destination="BV1-FR-VrT" eventType="valueChanged" id="tKQ-He-ag0"/>
                                 </connections>
                             </segmentedControl>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEw-kn-5WW">
+                                <rect key="frame" x="16" y="176" width="343" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euq-Qp-58l">
+                                        <rect key="frame" x="14" y="18" width="314" height="34"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M25-E1-id5">
+                                        <rect key="frame" x="104" y="60" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="save"/>
+                                        <connections>
+                                            <action selector="editTextSaveHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="gL4-Y7-qLb"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TwM-kI-HjI">
+                                        <rect key="frame" x="191" y="60" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="cancel"/>
+                                        <connections>
+                                            <action selector="editTextCancelHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="iI3-hY-vNR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AJf-0q-Js8">
                                 <rect key="frame" x="-240" y="64" width="240" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -209,18 +239,6 @@
                                     <outlet property="delegate" destination="BV1-FR-VrT" id="t7q-Hq-Rcm"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="euq-Qp-58l">
-                                <rect key="frame" x="30" y="211" width="314" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M25-E1-id5">
-                                <rect key="frame" x="164" y="253" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="OK"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -244,6 +262,7 @@
                     <connections>
                         <outlet property="appModeControl" destination="fd6-iI-GPZ" id="S8P-hc-5f1"/>
                         <outlet property="axisModeControl" destination="Ds8-LM-KLU" id="Tf3-Zd-1jt"/>
+                        <outlet property="cancelTextButton" destination="TwM-kI-HjI" id="ob3-Fe-VJ1"/>
                         <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
                         <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
@@ -253,9 +272,12 @@
                         <outlet property="resetButton" destination="8G7-1y-VpX" id="wta-eA-ujP"/>
                         <outlet property="rightToLeftGesture" destination="i8u-fm-EZJ" id="RZO-2z-4nl"/>
                         <outlet property="saveButton" destination="xvu-la-LA7" id="LzM-w4-dzb"/>
+                        <outlet property="saveTextButton" destination="M25-E1-id5" id="Sjs-vE-MZd"/>
                         <outlet property="sceneView" destination="L99-Ov-Rtp" id="aMC-cb-Nie"/>
                         <outlet property="settigsMenu" destination="8Zw-5M-dLr" id="2ud-TC-41s"/>
                         <outlet property="tapGesture" destination="Mnl-1N-bLF" id="WLP-Gw-xuT"/>
+                        <outlet property="textEditorView" destination="eEw-kn-5WW" id="mcn-K7-sMW"/>
+                        <outlet property="textField" destination="euq-Qp-58l" id="tgj-iu-Lat"/>
                         <outlet property="uncheckBaseMarkButton" destination="jUN-6Z-WXI" id="Tjy-fO-fmU"/>
                     </connections>
                 </viewController>

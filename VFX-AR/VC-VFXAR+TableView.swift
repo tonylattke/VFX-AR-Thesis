@@ -11,6 +11,8 @@ import UIKit
 import SceneKit
 import ARKit
 
+let distanceWithCamera: Float = -0.3
+
 extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
     
     // Init tables
@@ -49,22 +51,26 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
         // Effects
         if tableView == effectsMenu {
             let selectedEffect = optionsEffects[indexPath.row]
+            
+            guard let currentFrame = sceneView.session.currentFrame else {
+                return
+            }
+            
             switch selectedEffect {
             case "Box":
-                guard let currentFrame = sceneView.session.currentFrame else {
-                    return
-                }
-                
-                // Calculate position
-                var translation = matrix_identity_float4x4
-                translation.columns.3.z = -0.3
-                translation = matrix_multiply(currentFrame.camera.transform, translation)
-                
-                let box = LU3DBox(transform: translation,
+                let box = LU3DBox(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                       distance: distanceWithCamera),
                                   width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
                 
                 currentLUScene.objects.append(box)
                 mainNodeScene.addChildNode(box)
+            case "Text":
+                let text = LUText(transform:  calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                        distance: distanceWithCamera),
+                                  message: "")
+                
+                currentLUScene.objects.append(text)
+                mainNodeScene.addChildNode(text)
             default:
                 print("TODO")
             }
@@ -87,8 +93,17 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                 interactionMode = .rotation
                 updateUIStatus(title: "Edit - Rotation")
             default:
-                print("default")
-                //selectedObject.manage(selectedOption) objeto cambia de estatus de setting TODO
+                currentSelectedAttributeName = selectedOption
+                currentSelectedAttributeType =  (selectedObject?.manageOptions(selectedOption: selectedOption))!
+                
+                switch currentSelectedAttributeType {
+                case "String":
+                    updateUIStatus(title: "Edit - Text")
+                    textField.text = selectedObject?.getValue(attributeName: currentSelectedAttributeName)
+                    textEditorView.isHidden = false
+                default:
+                    print("No implemented")
+                }
             }
             
             hideSettingsMenu()
@@ -97,4 +112,5 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
     }
 
 }
+
 

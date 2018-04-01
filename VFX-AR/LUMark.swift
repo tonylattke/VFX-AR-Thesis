@@ -44,6 +44,7 @@ public class LUMark: LUObject {
         
         // Create plane
         let planeNode = SCNNode(geometry: planeGeometry)
+        highlightNode(planeNode)
         
         // Transform
         // Set Rotation around X 90 degrees (pi/2)

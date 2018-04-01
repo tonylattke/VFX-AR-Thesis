@@ -80,6 +80,15 @@ extension ViewControllerVFXAR {
                     // TODO
                     selectedObject?.createTransformBackup()
                     
+                    optionsSettings = []
+                    for option in baseOptionsSettings {
+                        optionsSettings.append(option)
+                    }
+                    for option in (selectedObject?.optionsSettings)! {
+                        optionsSettings.append(option.key)
+                    }
+                    settigsMenu.reloadData()
+                    
                     // Update UI
                     setEditionModeUI()
                 }
@@ -105,8 +114,24 @@ extension ViewControllerVFXAR {
                 selectedLUMark = nil
                 hideMarkOptions()
             }
-        default:
-            break // Do nothing
+        case .relocate:
+            let location = sender.location(in: sceneView)
+            let hitResults = sceneView.hitTest(location, options: nil)
+            if hitResults.count > 0 {
+                let result = hitResults.first!
+                if result.node.name == "InteractivObject" {
+                    let currentSelection = result.node as? LUInteractivObject
+                    let classname = currentSelection?.className
+                    switch classname! {
+                    case "LUText":
+                        if let luText = currentSelection as? LUText {
+                            showAlert(message: luText.message)
+                        }
+                    default:
+                        break
+                    }
+                }
+            }
         }
     }
     

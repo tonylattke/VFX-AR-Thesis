@@ -28,7 +28,8 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var settingsMenuIsShowing = false
     @IBOutlet weak var settigsMenu: UITableView!
     @IBOutlet weak var leadingConstraintRight: NSLayoutConstraint!
-    let optionsSettings = ["Translate", "Scale", "Rotate"]
+    let baseOptionsSettings = ["Translate", "Scale", "Rotate"]
+    var optionsSettings: [String] = []
     
     @IBOutlet weak var checkBaseMarkButton: UIButton!
     @IBOutlet weak var uncheckBaseMarkButton: UIButton!
@@ -62,6 +63,10 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var appModeControl: UISegmentedControl!
     @IBOutlet weak var axisModeControl: UISegmentedControl!
+    @IBOutlet weak var textEditorView: UIView!
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var saveTextButton: UIButton!
+    @IBOutlet weak var cancelTextButton: UIButton!
     
     // CoreLocation
     var saveFirstCoordinates = false
@@ -84,7 +89,10 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     
     var interactionAxis: InteractionAxis = .all
     var interactionMode: InteractionMode = .none
-    var selectedObject: LUInteractivObject?    
+    var selectedObject: LUInteractivObject?
+    
+    var currentSelectedAttributeName: String = ""
+    var currentSelectedAttributeType: String = ""
     
     // Init
     override func viewDidLoad() {
@@ -145,6 +153,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
             
             print("load mode started")
         }
+        
     }
     
     // Run
@@ -199,16 +208,19 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     }
     
     func load(sceneFilename: String) {
-        if let dir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            
-            let fileURL = dir.appendingPathComponent(sceneFilename)
-            
-            //reading
+        // Set URL of cache directory
+        let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+        // Adding filename DB
+        let documentsPath = documentsUrl.appendingPathComponent(sceneFilename)
+        if let dbUrl = documentsPath {
             do {
-                let plaintText = try String(contentsOf: fileURL, encoding: .utf8)
+                // Getting the data from File
+                let plaintText = try String(contentsOf: dbUrl, encoding: .utf8)
                 print(plaintText)
+                // Text formating
                 if let dataFromString = plaintText.data(using: .utf8, allowLossyConversion: false) {
                     do {
+                        // Data to Json
                         let jsonData = try JSON(data: dataFromString)
                         
                         // Rebuild last session
@@ -244,13 +256,14 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
                             mainNodeScene.addChildNode(object)
                         }
                         
-                        print("load successful")
+                        print("Load scene successful")
                     } catch {
                         print("json error")
                     }
                 }
+            } catch {
+                print("Cannot load \(sceneFilename)")
             }
-            catch {/* error handling here */}
         }
     }
     
