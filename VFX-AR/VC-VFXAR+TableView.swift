@@ -99,6 +99,12 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                 
                 currentLUScene.objects.append(fire)
                 mainNodeScene.addChildNode(fire)
+            case "3D Model":
+                let model = LU3DModel(transform: calculatePositionOfObject(cameraTransform: currentFrame.camera.transform,
+                                                                           distance: distanceWithCamera))
+                
+                currentLUScene.objects.append(model)
+                mainNodeScene.addChildNode(model)
             default:
                 print("TODO")
             }

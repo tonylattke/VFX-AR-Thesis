@@ -76,6 +76,7 @@ extension ViewControllerVFXAR {
                 let result = hitResults.first!
                 if result.node.name == "InteractivObject" {
                     selectedObject = result.node as? LUInteractivObject
+                    
                     interactionMode = .none
                     // TODO
                     selectedObject?.createTransformBackup()

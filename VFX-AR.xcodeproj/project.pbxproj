@@ -28,6 +28,7 @@
 		8C4DE2931FE1F7E600832EB3 /* LUInteractivObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */; };
 		8C52C3A120718D1300DCDEE4 /* LUSmoke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */; };
 		8C52C3A52071911800DCDEE4 /* LUFire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52C3A42071911800DCDEE4 /* LUFire.swift */; };
+		8C52C3E320724D7A00DCDEE4 /* LU3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C52C3E220724D7A00DCDEE4 /* LU3DModel.swift */; };
 		8C72796620712AB400C4932D /* LURain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C72796520712AB400C4932D /* LURain.swift */; };
 		8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */; };
 		8C8A75FC203C530200AD350D /* Helpers+Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C8A75FB203C530200AD350D /* Helpers+Classes.swift */; };
@@ -93,6 +94,7 @@
 		8C4DE2921FE1F7E600832EB3 /* LUInteractivObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUInteractivObject.swift; sourceTree = "<group>"; };
 		8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUSmoke.swift; sourceTree = "<group>"; };
 		8C52C3A42071911800DCDEE4 /* LUFire.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LUFire.swift; sourceTree = "<group>"; };
+		8C52C3E220724D7A00DCDEE4 /* LU3DModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LU3DModel.swift; sourceTree = "<group>"; };
 		8C72796520712AB400C4932D /* LURain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LURain.swift; sourceTree = "<group>"; };
 		8C7FDE4B2004F89D00578BC9 /* Helpers+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Extensions.swift"; sourceTree = "<group>"; };
 		8C8A75FB203C530200AD350D /* Helpers+Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Helpers+Classes.swift"; sourceTree = "<group>"; };
@@ -240,6 +242,8 @@
 				8C2093552070417B00032F42 /* LUSparks.swift */,
 				8C72796520712AB400C4932D /* LURain.swift */,
 				8C52C3A020718D1300DCDEE4 /* LUSmoke.swift */,
+				8C52C3A42071911800DCDEE4 /* LUFire.swift */,
+				8C52C3E220724D7A00DCDEE4 /* LU3DModel.swift */,
 			);
 			name = LUInteractiveObjectsSubClass;
 			sourceTree = "<group>";
@@ -278,7 +282,6 @@
 				8C4DE28F1FE1EF4500832EB3 /* VC-Extensions */,
 				8C4DE28D1FE1EF0C00832EB3 /* LU */,
 				8CCC53B41FC39E7900EC410C /* Resources */,
-				8C52C3A42071911800DCDEE4 /* LUFire.swift */,
 			);
 			path = "VFX-AR";
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				8C7FDE4C2004F89D00578BC9 /* Helpers+Extensions.swift in Sources */,
 				8C2093562070417B00032F42 /* LUSparks.swift in Sources */,
 				8C3631D3206167A200F01168 /* VC-ARCL+Buttons.swift in Sources */,
+				8C52C3E320724D7A00DCDEE4 /* LU3DModel.swift in Sources */,
 				8C3631CE2061306700F01168 /* VC-Home+TableView.swift in Sources */,
 				8CCC537F1FC361C600EC410C /* AppDelegate.swift in Sources */,
 				8C52C3A52071911800DCDEE4 /* LUFire.swift in Sources */,

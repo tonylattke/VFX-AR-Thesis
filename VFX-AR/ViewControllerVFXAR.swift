@@ -22,7 +22,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var effectsMenuIsShowing = false
     @IBOutlet weak var effectsMenu: UITableView!
     @IBOutlet weak var leadingConstraintLeft: NSLayoutConstraint!
-    let optionsEffects = ["Box","Text","Sparks","Rain","Smoke","Fire"]
+    let optionsEffects = ["Box","Text","Sparks","Rain","Smoke","Fire", "3D Model"]
     
     // Menu - Settings
     var settingsMenuIsShowing = false
