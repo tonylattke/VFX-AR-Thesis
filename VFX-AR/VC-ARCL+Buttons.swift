@@ -10,6 +10,7 @@ import UIKit
 
 extension ViewControllerARCL {
     
+    // Load scene button handler
     @IBAction func readyButtonHandle(_ sender: UIButton) {
         performSegue(withIdentifier: "loadSceneConnection", sender: self)
     }

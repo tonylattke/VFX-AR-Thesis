@@ -155,18 +155,21 @@ extension ViewControllerVFXAR {
         }
     }
     
+    // Check the mark as base mark
     @IBAction func checkBaseMarkAction(_ sender: UIButton) {
         if selectedLUMark != nil {
             selectedLUMark?.setAsBaseMark()
         }
     }
     
+    // Uncheck the mark as base mark
     @IBAction func uncheckBaseMarkAction(_ sender: UIButton) {
         if selectedLUMark != nil {
             selectedLUMark?.setAsNotBaseMark()
         }
     }
     
+    // Update appMode
     @IBAction func apModeControlChangeValueHandle(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -183,6 +186,7 @@ extension ViewControllerVFXAR {
         }
     }
     
+    // Update selected Axis
     @IBAction func selectAxisInteration(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 1:
@@ -196,6 +200,7 @@ extension ViewControllerVFXAR {
         }
     }
     
+    // Save edited text button handler
     @IBAction func editTextSaveHandle(_ sender: UIButton) {
         selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: textField.text!)
         
@@ -208,6 +213,7 @@ extension ViewControllerVFXAR {
         self.view.endEditing(true)
     }
     
+    // Cancel edited text button handler
     @IBAction func editTextCancelHandle(_ sender: UIButton) {
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
@@ -218,10 +224,12 @@ extension ViewControllerVFXAR {
         self.view.endEditing(true)
     }
     
+    // Update number of slider on attribute of selected object
     @IBAction func numberSliderHandle(_ sender: UISlider) {
         selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: String(numberSliderControl.value))
     }
     
+    // Save edited number button handler
     @IBAction func saveNumberEditionHandle(_ sender: UIButton) {
         selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: String(numberSliderControl.value))
         
@@ -233,6 +241,7 @@ extension ViewControllerVFXAR {
         updateUIStatus(title: "Edit Object")
     }
     
+    // Cancel edited number button handler
     @IBAction func cancelNumberEditionHandle(_ sender: UIButton) {
         
         currentSelectedAttributeName = ""

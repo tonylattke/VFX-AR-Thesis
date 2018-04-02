@@ -11,6 +11,7 @@ import SceneKit
 
 extension ViewControllerHome {
     
+    // Create scene button handler
     @IBAction func createSceneHandle(_ sender: UIButton) {
         performSegue(withIdentifier: "createSceneConnection", sender: self)
     }

@@ -182,6 +182,7 @@ func getImageWithColor(color: UIColor, size: CGSize) -> UIImage {
     return image
 }
 
+// Update DB - Current identifier
 func updateDBFile(filenameDB: String, counterID: Int) {
     // Set URL of cache directory
     let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
@@ -222,6 +223,7 @@ func updateDBFile(filenameDB: String, counterID: Int) {
     }
 }
 
+// Update DB - Scenes
 func updateDBFile(filenameDB: String, newSceneFile: String, sceneId: Int) {
     var currentSceneID: Int = 0
     var scenes: [SceneInfo] = []
@@ -294,9 +296,7 @@ func updateDBFile(filenameDB: String, newSceneFile: String, sceneId: Int) {
 
 }
 
-
-
-
+// Create a Line from origin to destination with color
 func createLineNode(fromPos origin: SCNVector3, toPos destination: SCNVector3, color: UIColor) -> SCNNode {
     let line = lineFrom(vector: origin, toVector: destination)
     let lineNode = SCNNode(geometry: line)
@@ -307,6 +307,7 @@ func createLineNode(fromPos origin: SCNVector3, toPos destination: SCNVector3, c
     return lineNode
 }
 
+// Create a line geometry
 func lineFrom(vector vector1: SCNVector3, toVector vector2: SCNVector3) -> SCNGeometry {
     let indices: [Int32] = [0, 1]
     
@@ -316,7 +317,7 @@ func lineFrom(vector vector1: SCNVector3, toVector vector2: SCNVector3) -> SCNGe
     return SCNGeometry(sources: [source], elements: [element])
 }
 
-
+// Create a highlight Box of node
 func highlightNode(_ node: SCNNode) {
     let (min, max) = node.boundingBox
     let zCoord = node.position.z
@@ -337,15 +338,7 @@ func highlightNode(_ node: SCNNode) {
     }
 }
 
-func calculatePositionOfObject(cameraTransform: matrix_float4x4, distance: Float) -> matrix_float4x4 {
-    var result = matrix_identity_float4x4
-    result.columns.3.z = distanceWithCamera
-    result = matrix_multiply(cameraTransform, result)
-    
-    return result
-}
-
-
+// Delete highlight Box of node
 func unhighlightNode(_ node: SCNNode) {
     let highlightningNodes = node.childNodes { (child, stop) -> Bool in
         child.name == "borderlighted"
@@ -353,4 +346,13 @@ func unhighlightNode(_ node: SCNNode) {
     highlightningNodes.forEach {
         $0.removeFromParentNode()
     }
+}
+
+// Create transform with the camera and distance of camera
+func calculatePositionOfObject(cameraTransform: matrix_float4x4, distance: Float) -> matrix_float4x4 {
+    var result = matrix_identity_float4x4
+    result.columns.3.z = distanceWithCamera
+    result = matrix_multiply(cameraTransform, result)
+    
+    return result
 }

@@ -51,8 +51,7 @@ extension ViewControllerVFXAR {
         appModeControl.isHidden = false
         axisModeControl.isHidden = true
         
-        checkBaseMarkButton.isHidden = true
-        uncheckBaseMarkButton.isHidden = true
+        markControlView.isHidden = true
     }
     
     // Set Creation mode
@@ -67,8 +66,7 @@ extension ViewControllerVFXAR {
         appModeControl.isHidden = false
         axisModeControl.isHidden = true
         
-        checkBaseMarkButton.isHidden = true
-        uncheckBaseMarkButton.isHidden = true
+        markControlView.isHidden = true
     }
     
     // Set Relocate mode
@@ -83,8 +81,7 @@ extension ViewControllerVFXAR {
         appModeControl.isHidden = false
         axisModeControl.isHidden = true
         
-        checkBaseMarkButton.isHidden = true
-        uncheckBaseMarkButton.isHidden = true
+        markControlView.isHidden = true
     }
     
     // Set edition mode
@@ -99,18 +96,17 @@ extension ViewControllerVFXAR {
         appModeControl.isHidden = true
         axisModeControl.isHidden = false
         
-        checkBaseMarkButton.isHidden = true
-        uncheckBaseMarkButton.isHidden = true
+        markControlView.isHidden = true
     }
     
+    // Show mark UI options
     func showMarkOptions(){
-        checkBaseMarkButton.isHidden = false
-        uncheckBaseMarkButton.isHidden = false
+        markControlView.isHidden = false
     }
     
+    // Hide mark UI options
     func hideMarkOptions(){
-        checkBaseMarkButton.isHidden = true
-        uncheckBaseMarkButton.isHidden = true
+        markControlView.isHidden = true
     }
     
     // Show alert with message
@@ -149,6 +145,7 @@ extension ViewControllerVFXAR {
         effectsMenuIsShowing = false
     }
     
+    // Update status label
     func updateUIStatus(title: String) {
         self.title = title
     }

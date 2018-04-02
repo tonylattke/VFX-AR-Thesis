@@ -17,6 +17,7 @@ func sizeCompare(old: Float, new: Float) -> Float {
 
 extension ViewControllerVFXAR {
     
+    // Update Mark table
     func updateMarkIdTable() {
         
         var markMatchingPossibilities = [(UUID,[(UUID,Float)])]()
@@ -101,6 +102,7 @@ extension ViewControllerVFXAR {
         }
     }
     
+    // Update positions of loaded objects
     func relocateObjects(){
         print("relocating.......")
         print("deltas")

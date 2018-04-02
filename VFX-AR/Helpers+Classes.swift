@@ -50,6 +50,7 @@ public class SceneInfo {
     }
 }
 
+// Value type
 public class ValueType {
     let name: String
     let rangeType: String
@@ -60,6 +61,7 @@ public class ValueType {
     }
 }
 
+// Range of number - value type
 public class RangeNumber: ValueType {
     let min: Float
     let max: Float

@@ -196,10 +196,12 @@ public class LUInteractivObject: LUObject {
         return optionsSettings[selectedOption]!
     }
 
+    // Update attribute - Interface
     func updateAttribute(name: String, value: String) {
         
     }
     
+    // Get value of class - Interface
     func getValue(attributeName: String) -> String {
         return ""
     }

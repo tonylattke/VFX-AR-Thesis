@@ -31,9 +31,6 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     let baseOptionsSettings = ["Translate", "Scale", "Rotate"]
     var optionsSettings: [String] = []
     
-    @IBOutlet weak var checkBaseMarkButton: UIButton!
-    @IBOutlet weak var uncheckBaseMarkButton: UIButton!
-    
     // Gestures
     @IBOutlet var tapGesture: UITapGestureRecognizer!
     @IBOutlet var rightToLeftGesture: UIScreenEdgePanGestureRecognizer!
@@ -63,6 +60,10 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var appModeControl: UISegmentedControl!
     @IBOutlet weak var axisModeControl: UISegmentedControl!
+    
+    @IBOutlet weak var markControlView: UIView!
+    @IBOutlet weak var checkBaseMarkButton: UIButton!
+    @IBOutlet weak var uncheckBaseMarkButton: UIButton!
     
     @IBOutlet weak var textEditorView: UIView!
     @IBOutlet weak var textField: UITextField!
@@ -249,12 +250,15 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
                         baseSessionScene = LUScene(id: loadedSceneID, location: loadedBaseInitialPosition,
                                                    marks: loadedBaseMarks, objects: loadedBaseObjects)
                         
+                        // Set Marks as not used
                         for baseMark in (baseSessionScene?.marks)! {
                             markIdTable[baseMark.key] = nil
                         }
                         
+                        // Update Mark table
                         updateMarkIdTable()
                         
+                        // Adding objects to scene
                         for object in (baseSessionScene?.objects)! {
                             object.isHidden = true
                             currentLUScene.objects.append(object)

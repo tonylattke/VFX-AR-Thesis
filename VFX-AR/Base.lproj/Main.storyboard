@@ -122,22 +122,6 @@
                                     <action selector="readButtonTouchDown:" destination="BV1-FR-VrT" eventType="touchDown" id="2tq-B3-Iwn"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d5-Ng-4RJ">
-                                <rect key="frame" x="115" y="602" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="check"/>
-                                <connections>
-                                    <action selector="checkBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="9JN-Tj-e9X"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-6Z-WXI">
-                                <rect key="frame" x="201" y="602" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="uncheck"/>
-                                <connections>
-                                    <action selector="uncheckBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="UHg-Lz-MVn"/>
-                                </connections>
-                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fd6-iI-GPZ">
                                 <rect key="frame" x="91" y="80" width="194" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -196,7 +180,7 @@
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gH6-gv-fgF">
-                                <rect key="frame" x="16" y="446" width="343" height="93"/>
+                                <rect key="frame" x="16" y="535" width="343" height="93"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="GfN-EB-rt3">
@@ -220,6 +204,28 @@
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveNumberEditionHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="vTb-TF-cNE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-Y9-zSa">
+                                <rect key="frame" x="16" y="581" width="343" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUN-6Z-WXI">
+                                        <rect key="frame" x="186" y="15" width="60" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="uncheck"/>
+                                        <connections>
+                                            <action selector="uncheckBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="UHg-Lz-MVn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1d5-Ng-4RJ">
+                                        <rect key="frame" x="107" y="15" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="check"/>
+                                        <connections>
+                                            <action selector="checkBaseMarkAction:" destination="BV1-FR-VrT" eventType="touchDown" id="9JN-Tj-e9X"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -298,6 +304,7 @@
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
                         <outlet property="leadingConstraintRight" destination="3iO-cx-Gny" id="k0D-QR-BCb"/>
                         <outlet property="letToRightGesture" destination="bbV-kl-ev1" id="c43-NM-UIM"/>
+                        <outlet property="markControlView" destination="EJJ-Y9-zSa" id="uKO-6X-2zu"/>
                         <outlet property="numberEditorView" destination="gH6-gv-fgF" id="Hyb-wn-0xm"/>
                         <outlet property="numberSliderControl" destination="GfN-EB-rt3" id="B63-e3-2Qg"/>
                         <outlet property="readButton" destination="wCg-Qq-Axb" id="k4q-kh-t6Y"/>

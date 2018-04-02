@@ -117,22 +117,26 @@ public class LUMark: LUObject {
         nodeInSceneRelativPosition = node.position
     }
     
+    // Set mark as used with color blue
     func setUsed() {
         // Change color
         planeGeometry.materials.first?.diffuse.contents = UIColor.blue
     }
     
+    // Set mark as not used with color red
     func setNotUsed() {
         // Change color
         planeGeometry.materials.first?.diffuse.contents = UIColor.red
     }
     
+    // Set mark as base mark with color gray
     func setAsBaseMark() {
         isBaseMark = true
         // Change color
         planeGeometry.materials.first?.diffuse.contents = UIColor.gray
     }
     
+    // Set mark as not base mark with color red
     func setAsNotBaseMark() {
         isBaseMark = false
         // Change color
