@@ -120,8 +120,27 @@ func LUMarkToJSON(mark: LUMark, references: LUReferencePosition) -> JSON {
         "references": references
     ]
     result["transform"][3][0] = JSON(mark.simdTransform.columns.3.x + mark.nodeInSceneRelativPosition.x)
-    result["transform"][3][1] = JSON(mark.anchor.transform.columns.3.y + mark.nodeInSceneRelativPosition.y)
+    result["transform"][3][1] = JSON(mark.anchor.transform.columns.3.y)
     result["transform"][3][2] = JSON(mark.simdTransform.columns.3.z + mark.nodeInSceneRelativPosition.z)
+    
+    return result
+}
+
+// LUMark loaded to JSON
+func LUMarkToJSON(mark: LUMark) -> JSON {
+    let references: JSON = [
+        "x": LUComparedPairToJSON(pair: mark.references.x),
+        "y": LUComparedPairToJSON(pair: mark.references.y),
+        "z": LUComparedPairToJSON(pair: mark.references.z)
+    ]
+    
+    let result: JSON = [
+        "id": mark.id.uuidString,
+        "transform": simd_float4x4ToJSON(matrix: mark.simdTransform),
+        "width": mark.width,
+        "height": mark.height,
+        "references": references
+    ]
     
     return result
 }

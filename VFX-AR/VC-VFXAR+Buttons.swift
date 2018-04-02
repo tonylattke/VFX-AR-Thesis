@@ -110,12 +110,18 @@ extension ViewControllerVFXAR {
         if currentLUScene.positionGPS != nil {
             // Coding marks
             var marksJSON: [JSON] = []
-            for mark in currentLUScene.marks {
-                if mark.value.isBaseMark {
-                    let baseMarkReferences = filterBaseMarkReferences(references: mark.value.references,
-                                                                      marks: currentLUScene.marks)
-                    marksJSON.append(LUMarkToJSON(mark: mark.value,
-                                                  references: baseMarkReferences))
+            if baseSessionScene != nil {
+                for mark in (baseSessionScene?.marks)! {
+                    marksJSON.append(LUMarkToJSON(mark: mark.value))
+                }
+            } else {
+                for mark in currentLUScene.marks {
+                    if mark.value.isBaseMark {
+                        let baseMarkReferences = filterBaseMarkReferences(references: mark.value.references,
+                                                                          marks: currentLUScene.marks)
+                        marksJSON.append(LUMarkToJSON(mark: mark.value,
+                                                      references: baseMarkReferences))
+                    }
                 }
             }
             

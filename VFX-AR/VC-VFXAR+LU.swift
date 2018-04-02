@@ -111,7 +111,7 @@ extension ViewControllerVFXAR {
             let currentMark = currentLUScene.marks[markIdTuple.key]
             if let baseMark = baseSessionScene?.marks[markIdTuple.value!] {
                 let x = (currentMark?.nodeInSceneRelativPosition.x)! + (currentMark?.simdTransform.columns.3.x)! - baseMark.simdTransform.columns.3.x
-                let y = (currentMark?.nodeInSceneRelativPosition.y)! + (currentMark?.anchor.transform.columns.3.y)! - baseMark.simdTransform.columns.3.y
+                let y = (currentMark?.anchor.transform.columns.3.y)! - baseMark.simdTransform.columns.3.y
                 let z = (currentMark?.nodeInSceneRelativPosition.z)! + (currentMark?.simdTransform.columns.3.z)! - baseMark.simdTransform.columns.3.z
                 
                 let delta = SCNVector3(x,y,z)
