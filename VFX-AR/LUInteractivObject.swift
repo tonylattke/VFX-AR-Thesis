@@ -13,7 +13,7 @@ import CoreLocation
 
 public class LUInteractivObject: LUObject {
     
-    var className: String?
+    var className: String = ""
     var loadedTransform: simd_float4x4?
     
     // Transformations

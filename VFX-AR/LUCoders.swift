@@ -184,7 +184,7 @@ func LUInteractivObjectToJSON(object: LUInteractivObject) -> JSON {
     let result: JSON = [
         "transform": simd_float4x4ToJSON(matrix: object.simdTransform),
         "pivot": simd_float4x4ToJSON(matrix: object.simdPivot),
-        "className": object.className!,
+        "className": object.className,
         "subClassInfo": LUInteractiveObjectSubClassToJSON(object: object)
     ]
     
@@ -195,16 +195,36 @@ func LUInteractivObjectToJSON(object: LUInteractivObject) -> JSON {
 func JSONToLUInteractivObject(data: JSON) -> LUInteractivObject {
     let result: LUInteractivObject
     switch data["className"].string! {
-    // LU3DObject
+    // LU3DBox
     case "LU3DBox":
         result = LU3DBox(transform: matrix_identity_float4x4,
                          width: CGFloat(data["subClassInfo"]["width"].floatValue),
                          height: CGFloat(data["subClassInfo"]["height"].floatValue),
                          length: CGFloat(data["subClassInfo"]["length"].floatValue),
                          chamferRadius: CGFloat(data["subClassInfo"]["chamferRadius"].floatValue))
+    // LUText
     case "LUText":
         result = LUText(transform: matrix_identity_float4x4,
                         message: data["subClassInfo"]["message"].stringValue)
+    // LUSparks
+    case "LUSparks":
+        result = LUSparks(transform: matrix_identity_float4x4,
+                          amountOfParticles: data["subClassInfo"]["Amount of particles"].floatValue)
+    // LURain
+    case "LURain":
+        result = LURain(transform: matrix_identity_float4x4,
+                        amountOfParticles: data["subClassInfo"]["Amount of particles"].floatValue)
+    // LUSmoke
+    case "LUSmoke":
+        result = LUSmoke(transform: matrix_identity_float4x4,
+                         amountOfParticles: data["subClassInfo"]["Amount of particles"].floatValue)
+    // LUFire
+    case "LUFire":
+        result = LUFire(transform: matrix_identity_float4x4,
+                        amountOfParticles: data["subClassInfo"]["Amount of particles"].floatValue)
+    // LU3DModel
+    case "LU3DModel":
+        result = LU3DModel(transform: matrix_identity_float4x4)
     // Otherwise
     default:
         result = LUInteractivObject(className: data["className"].string!,
@@ -223,7 +243,7 @@ func LUInteractiveObjectSubClassToJSON(object: LUInteractivObject) -> JSON {
     var result: JSON = []
     switch object.className {
     // LU3DObject
-    case "LU3DBox"?:
+    case "LU3DBox":
         result = [
             "width": (object.geometry as! SCNBox).width,
             "height": (object.geometry as! SCNBox).height,
@@ -231,11 +251,44 @@ func LUInteractiveObjectSubClassToJSON(object: LUInteractivObject) -> JSON {
             "chamferRadius": (object.geometry as! SCNBox).chamferRadius
         ]
     // LUText
-    case "LUText"?:
+    case "LUText":
         if let luText = object as? LUText {
             result = [
                 "message": luText.message
             ]
+        }
+    // LUSparks
+    case "LUSparks":
+        if let luSparks = object as? LUSparks {
+            result = [
+                "Amount of particles": Float((luSparks.particleSystem?.birthRate)!)
+            ]
+        }
+    // LURain
+    case "LURain":
+        if let luRain = object as? LURain {
+            result = [
+                "Amount of particles": Float((luRain.particleSystem?.birthRate)!)
+            ]
+        }
+    // LUSmoke
+    case "LUSmoke":
+        if let luSmoke = object as? LUSmoke {
+            result = [
+                "Amount of particles": Float((luSmoke.particleSystem?.birthRate)!)
+            ]
+        }
+    // LUFire
+    case "LUFire":
+        if let luFire = object as? LUFire {
+            result = [
+                "Amount of particles": Float((luFire.particleSystem?.birthRate)!)
+            ]
+        }
+    // LU3DModel
+    case "LU3DModel":
+        if let lu3DModel = object as? LU3DModel {
+            result = []
         }
     // Otherwise
     default:
