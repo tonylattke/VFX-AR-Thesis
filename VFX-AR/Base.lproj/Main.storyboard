@@ -135,20 +135,42 @@
                                     <action selector="apModeControlChangeValueHandle:" destination="BV1-FR-VrT" eventType="valueChanged" id="fId-Jc-hk5"/>
                                 </connections>
                             </segmentedControl>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-LM-KLU">
-                                <rect key="frame" x="16" y="80" width="343" height="29"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k00-rG-22Z">
+                                <rect key="frame" x="16" y="64" width="351" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <segments>
-                                    <segment title="All"/>
-                                    <segment title="X"/>
-                                    <segment title="Y"/>
-                                    <segment title="Z"/>
-                                </segments>
-                                <connections>
-                                    <action selector="selectAxisInteration:" destination="BV1-FR-VrT" eventType="valueChanged" id="tKQ-He-ag0"/>
-                                </connections>
-                            </segmentedControl>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ds8-LM-KLU">
+                                        <rect key="frame" x="0.0" y="16" width="351" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <segments>
+                                            <segment title="All"/>
+                                            <segment title="X"/>
+                                            <segment title="Y"/>
+                                            <segment title="Z"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="selectAxisInteration:" destination="BV1-FR-VrT" eventType="valueChanged" id="tKQ-He-ag0"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1y8-eA-QnP">
+                                        <rect key="frame" x="107" y="532" width="46" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="saveTransformAxisHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="3am-tJ-W5F"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wsz-Uf-ZEL">
+                                        <rect key="frame" x="190" y="532" width="51" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelTransformAxisHandle:" destination="BV1-FR-VrT" eventType="touchDown" id="8ob-ol-gEL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eEw-kn-5WW">
                                 <rect key="frame" x="16" y="176" width="343" height="107"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -299,6 +321,7 @@
                         <outlet property="axisModeControl" destination="Ds8-LM-KLU" id="Tf3-Zd-1jt"/>
                         <outlet property="cancelEditionNumberButton" destination="t5w-WM-UdC" id="4kr-uL-Gqz"/>
                         <outlet property="cancelTextButton" destination="TwM-kI-HjI" id="ob3-Fe-VJ1"/>
+                        <outlet property="cancelTransformAxisViewButton" destination="Wsz-Uf-ZEL" id="gxC-ea-Wte"/>
                         <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
                         <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
@@ -313,11 +336,13 @@
                         <outlet property="saveButton" destination="xvu-la-LA7" id="LzM-w4-dzb"/>
                         <outlet property="saveEditionNumberButton" destination="U70-eN-BXU" id="sYC-8P-Cpa"/>
                         <outlet property="saveTextButton" destination="M25-E1-id5" id="Sjs-vE-MZd"/>
+                        <outlet property="saveTransformAxisViewButton" destination="1y8-eA-QnP" id="oFQ-uT-5Oh"/>
                         <outlet property="sceneView" destination="L99-Ov-Rtp" id="aMC-cb-Nie"/>
                         <outlet property="settigsMenu" destination="8Zw-5M-dLr" id="2ud-TC-41s"/>
                         <outlet property="tapGesture" destination="Mnl-1N-bLF" id="WLP-Gw-xuT"/>
                         <outlet property="textEditorView" destination="eEw-kn-5WW" id="mcn-K7-sMW"/>
                         <outlet property="textField" destination="euq-Qp-58l" id="tgj-iu-Lat"/>
+                        <outlet property="transformAxisView" destination="k00-rG-22Z" id="BAG-KW-73l"/>
                         <outlet property="uncheckBaseMarkButton" destination="jUN-6Z-WXI" id="Tjy-fO-fmU"/>
                     </connections>
                 </viewController>

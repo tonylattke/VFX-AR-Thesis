@@ -207,7 +207,7 @@ extension ViewControllerVFXAR {
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
         
-        textEditorView.isHidden = true
+        hideTextEditor()
         updateUIStatus(title: "Edit Object")
         
         self.view.endEditing(true)
@@ -218,7 +218,7 @@ extension ViewControllerVFXAR {
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
         
-        textEditorView.isHidden = true
+        hideTextEditor()
         updateUIStatus(title: "Edit Object")
         
         self.view.endEditing(true)
@@ -236,19 +236,39 @@ extension ViewControllerVFXAR {
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
         
-        numberEditorView.isHidden = true
-        
+        hideNumberEditor()
         updateUIStatus(title: "Edit Object")
     }
     
     // Cancel edited number button handler
     @IBAction func cancelNumberEditionHandle(_ sender: UIButton) {
-        
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
         
-        numberEditorView.isHidden = true
-        
+        hideNumberEditor()
         updateUIStatus(title: "Edit Object")
     }
+    
+    // Save edited axis handler
+    @IBAction func saveTransformAxisHandle(_ sender: UIButton) {
+        // Save transform
+        selectedObject?.saveCurrentState()
+        
+        interactionMode = .none
+        
+        hideTranformAxisMenu()
+        updateUIStatus(title: "Edit Object")
+    }
+    
+    // Cancel edited axis handler
+    @IBAction func cancelTransformAxisHandle(_ sender: UIButton) {
+        // Restore Backuo state
+        selectedObject?.restoreBackupState()
+        
+        interactionMode = .none
+        
+        hideTranformAxisMenu()
+        updateUIStatus(title: "Edit Object")
+    }
+    
 }

@@ -29,13 +29,15 @@ class ViewControllerHome: UIViewController {
         // Load DB
         loadDB()
         
-        if scenes.count > 0 {
+        // Update UI
+        if scenes.count > 0 {   // Show Table
             messageNoDataFound.isHidden = true
             tableViewScenes.isHidden = false
-        } else {
+        } else {                // Show message
             messageNoDataFound.isHidden = false
             tableViewScenes.isHidden = true
         }
+        
         // Reload data on tables
         tableViewScenes.reloadData()
     }

@@ -37,6 +37,11 @@ extension ViewControllerVFXAR {
         saveEditionNumberButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
         cancelEditionNumberButton.titleLabel?.font = font
         cancelEditionNumberButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
+        
+        saveTransformAxisViewButton.titleLabel?.font = font
+        saveTransformAxisViewButton.setTitle(String.fontAwesomeIcon(name: .check), for: .normal)
+        cancelTransformAxisViewButton.titleLabel?.font = font
+        cancelTransformAxisViewButton.setTitle(String.fontAwesomeIcon(name: .ban), for: .normal)
     }
     
     // Set Idle mode
@@ -49,9 +54,11 @@ extension ViewControllerVFXAR {
         readButton.isHidden = true
         resetButton.isHidden = false
         appModeControl.isHidden = false
-        axisModeControl.isHidden = true
         
+        transformAxisView.isHidden = true
         markControlView.isHidden = true
+        numberEditorView.isHidden = true
+        textEditorView.isHidden = true
     }
     
     // Set Creation mode
@@ -64,9 +71,11 @@ extension ViewControllerVFXAR {
         readButton.isHidden = true
         resetButton.isHidden = false
         appModeControl.isHidden = false
-        axisModeControl.isHidden = true
         
+        transformAxisView.isHidden = true
         markControlView.isHidden = true
+        numberEditorView.isHidden = true
+        textEditorView.isHidden = true
     }
     
     // Set Relocate mode
@@ -79,9 +88,11 @@ extension ViewControllerVFXAR {
         readButton.isHidden = false
         resetButton.isHidden = false
         appModeControl.isHidden = false
-        axisModeControl.isHidden = true
         
+        transformAxisView.isHidden = true
         markControlView.isHidden = true
+        numberEditorView.isHidden = true
+        textEditorView.isHidden = true
     }
     
     // Set edition mode
@@ -94,19 +105,11 @@ extension ViewControllerVFXAR {
         readButton.isHidden = true
         resetButton.isHidden = true
         appModeControl.isHidden = true
-        axisModeControl.isHidden = false
         
+        transformAxisView.isHidden = true
         markControlView.isHidden = true
-    }
-    
-    // Show mark UI options
-    func showMarkOptions(){
-        markControlView.isHidden = false
-    }
-    
-    // Hide mark UI options
-    func hideMarkOptions(){
-        markControlView.isHidden = true
+        numberEditorView.isHidden = true
+        textEditorView.isHidden = true
     }
     
     // Show alert with message
@@ -121,6 +124,35 @@ extension ViewControllerVFXAR {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    // Update status label
+    func updateUIStatus(title: String) {
+        self.title = title
+    }
+    
+    // ------------------------- Mark menu control -------------------------- //
+    
+    // Show mark UI options
+    func showMarkOptions(){
+        markControlView.isHidden = false
+    }
+    
+    // Hide mark UI options
+    func hideMarkOptions(){
+        markControlView.isHidden = true
+    }
+    
+    // ----------------------- Transform axis control ----------------------- //
+    
+    func showTranformAxisMenu() {
+        transformAxisView.isHidden = false
+    }
+    
+    func hideTranformAxisMenu() {
+        transformAxisView.isHidden = true
+    }
+    
+    // ----------------------- Settings menu control ------------------------ //
+    
     // Show Settings Menu
     func showSettingsMenu(){
         leadingConstraintRight.constant = 0
@@ -132,6 +164,8 @@ extension ViewControllerVFXAR {
         leadingConstraintRight.constant = 240
         settingsMenuIsShowing = false
     }
+    
+    // ------------------------ Effects menu control ------------------------ //
     
     // Show Effects Menu
     func showEffectsMenu(){
@@ -145,8 +179,28 @@ extension ViewControllerVFXAR {
         effectsMenuIsShowing = false
     }
     
-    // Update status label
-    func updateUIStatus(title: String) {
-        self.title = title
+    // ----------------------- number editor control ------------------------ //
+    
+    // Show Number editor
+    func showNumberEditor() {
+        numberEditorView.isHidden = false
     }
+    
+    // Hide number editor
+    func hideNumberEditor() {
+        numberEditorView.isHidden = true
+    }
+    
+    // ------------------------ text editor control ------------------------- //
+    
+    // Show Text editor
+    func showTextEditor() {
+        textEditorView.isHidden = false
+    }
+    
+    // Hide text editor
+    func hideTextEditor() {
+        textEditorView.isHidden = true
+    }
+    
 }

@@ -94,8 +94,8 @@ extension ViewControllerVFXAR {
                     setEditionModeUI()
                 }
             } else {
-                // Save transform and deselect object
-                selectedObject?.saveCurrentState()
+                // Deselect object
+                selectedObject?.restoreBackupState()
                 selectedObject = nil
                 
                 interactionMode = .none

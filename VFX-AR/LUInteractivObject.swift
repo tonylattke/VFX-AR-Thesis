@@ -160,6 +160,75 @@ public class LUInteractivObject: LUObject {
         translateFactor.z = 0
     }
     
+    func restoreBackupState() {
+        // --------------------------- Transform ---------------------------- //
+        // Column 0
+        simdTransform[0].x = simdTransformBackup[0].x
+        simdTransform[0].y = simdTransformBackup[0].y
+        simdTransform[0].z = simdTransformBackup[0].z
+        simdTransform[0].w = simdTransformBackup[0].w
+        
+        // Column 1
+        simdTransform[1].x = simdTransformBackup[1].x
+        simdTransform[1].y = simdTransformBackup[1].y
+        simdTransform[1].z = simdTransformBackup[1].z
+        simdTransform[1].w = simdTransformBackup[1].w
+        
+        // Column 2
+        simdTransform[2].x = simdTransformBackup[2].x
+        simdTransform[2].y = simdTransformBackup[2].y
+        simdTransform[2].z = simdTransformBackup[2].z
+        simdTransform[2].w = simdTransformBackup[2].w
+        
+        // Column 3
+        simdTransform[3].x = simdTransformBackup[3].x
+        simdTransform[3].y = simdTransformBackup[3].y
+        simdTransform[3].z = simdTransformBackup[3].z
+        simdTransform[3].w = simdTransformBackup[3].w
+        
+        // ----------------------------- Pivot ------------------------------ //
+        // Column 0
+        simdPivot[0].x = simdPivotBackup[0].x
+        simdPivot[0].y = simdPivotBackup[0].y
+        simdPivot[0].z = simdPivotBackup[0].z
+        simdPivot[0].w = simdPivotBackup[0].w
+        
+        // Column 1
+        simdPivot[1].x = simdPivotBackup[1].x
+        simdPivot[1].y = simdPivotBackup[1].y
+        simdPivot[1].z = simdPivotBackup[1].z
+        simdPivot[1].w = simdPivotBackup[1].w
+        
+        // Column 2
+        simdPivot[2].x = simdPivotBackup[2].x
+        simdPivot[2].y = simdPivotBackup[2].y
+        simdPivot[2].z = simdPivotBackup[2].z
+        simdPivot[2].w = simdPivotBackup[2].w
+        
+        // Column 3
+        simdPivot[3].x = simdPivotBackup[3].x
+        simdPivot[3].y = simdPivotBackup[3].y
+        simdPivot[3].z = simdPivotBackup[3].z
+        simdPivot[3].w = simdPivotBackup[3].w
+        
+        // ------------------------ Transform Factors ----------------------- //
+        
+        // Scale
+        scaleFactor.x = 1
+        scaleFactor.y = 1
+        scaleFactor.z = 1
+        
+        // Rotation
+        rotateFactor.x = 0
+        rotateFactor.y = 0
+        rotateFactor.z = 0
+        
+        // Translate
+        translateFactor.x = 0
+        translateFactor.y = 0
+        translateFactor.z = 0
+    }
+    
     func updateTransform() {
         // Translate backup
         let positionBackup = SCNVector3(simdTransform[3].x,

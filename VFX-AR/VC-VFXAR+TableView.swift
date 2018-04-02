@@ -119,12 +119,15 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
             switch selectedOption {
             case "Translate":
                 interactionMode = .position
+                showTranformAxisMenu()
                 updateUIStatus(title: "Edit - Translation")
             case "Scale":
                 interactionMode = .scale
+                showTranformAxisMenu()
                 updateUIStatus(title: "Edit - Scale")
             case "Rotate":
                 interactionMode = .rotation
+                showTranformAxisMenu()
                 updateUIStatus(title: "Edit - Rotation")
             default:
                 currentSelectedAttributeName = selectedOption
@@ -134,7 +137,7 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                 case "String":
                     updateUIStatus(title: "Edit - Text")
                     textField.text = selectedObject?.getValue(attributeName: currentSelectedAttributeName)
-                    textEditorView.isHidden = false
+                    showTextEditor()
                 case "Float":
                     if let rangeNumber = currentSelectedAttributeType as? RangeNumber {
                         updateUIStatus(title: "Edit - Number")
@@ -142,7 +145,7 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                         numberSliderControl.value = Float(value!)!
                         numberSliderControl.minimumValue = rangeNumber.min
                         numberSliderControl.maximumValue = rangeNumber.max
-                        numberEditorView.isHidden = false
+                        showNumberEditor()
                     }
                 default:
                     print("No implemented")
