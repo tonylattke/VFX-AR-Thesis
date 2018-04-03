@@ -17,7 +17,9 @@ extension ViewControllerARCL: CLLocationManagerDelegate {
         // Update current position
         currentPostion = locations.last
         
-        let distance = startPoint?.distance(from: currentPostion!)
-        print(distance)
+        if !flag {
+            let distance = startPoint?.distance(from: currentPostion!)
+            print(distance)
+        }
     }
 }

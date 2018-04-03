@@ -13,8 +13,12 @@ import CoreLocation
 
 import ARCL
 
+var status = "Loading"  
+
 class ViewControllerARCL: UIViewController {
 
+    @IBOutlet weak var startFindGoalButton: UIButton!
+    
     // Scene View ARCL
     @IBOutlet weak var viewAreaARCL: UIView!
     var sceneLocationView = SceneLocationView()
@@ -22,13 +26,13 @@ class ViewControllerARCL: UIViewController {
     // Location manager
     var locationManager:CLLocationManager = CLLocationManager()
     
-    var flag = true
-    
     var initialLocation = double3.init() // Interface
     var startPoint: CLLocation?
     var currentPostion: CLLocation?
     
     var filenameToLoad: String = ""
+    var flag = true
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +40,8 @@ class ViewControllerARCL: UIViewController {
         // Create Scene
         sceneLocationView.run()
         sceneLocationView.showsStatistics = true
-        sceneLocationView.debugOptions = SCNDebugOptions(rawValue: ARSCNDebugOptions.showFeaturePoints.rawValue | ARSCNDebugOptions.showWorldOrigin.rawValue)
+//        sceneLocationView.debugOptions = SCNDebugOptions(rawValue: ARSCNDebugOptions.showFeaturePoints.rawValue | ARSCNDebugOptions.showWorldOrigin.rawValue)
+        sceneLocationView.debugOptions = ARSCNDebugOptions.showWorldOrigin
         viewAreaARCL.addSubview(sceneLocationView)
         
         // Location Manager set
@@ -48,29 +53,23 @@ class ViewControllerARCL: UIViewController {
             locationManager.distanceFilter = kCLDistanceFilterNone
             locationManager.startUpdatingLocation()
         }
-        
-        startPoint = CLLocation(coordinate: CLLocationCoordinate2D(latitude: initialLocation.x,
-                                                                   longitude: initialLocation.y),
-                                altitude: initialLocation.z,
-                                horizontalAccuracy: CLLocationAccuracy(),
-                                verticalAccuracy: CLLocationAccuracy(),
-                                timestamp: Date(timeIntervalSinceNow: 0))
-        
-        //            let coordinate = CLLocationCoordinate2D(latitude: 53.0547941615774, longitude:  8.78312816819939)
-        //            let location = CLLocation(coordinate: coordinate, altitude: 2.67797017097473)
-        let image = getImageWithColor(color: .green, size: CGSize(width:100,height:100))
-        let annotationNode = LocationAnnotationNode(location: startPoint, image: image)
-        
-        // Add Annotation to Scene
-        sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
-        print(annotationNode.worldPosition)
-        
-        let geom = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
-        let geomN = SCNNode(geometry: geom)
-        geomN.worldPosition = annotationNode.worldPosition
-        sceneLocationView.scene.rootNode.addChildNode(geomN)
-        
-        flag = false
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        let coordinate = CLLocationCoordinate2D(latitude: initialLocation.x, longitude:  initialLocation.y) // coordenadas de la oficina
+//        let location = CLLocation(coordinate: coordinate, altitude: initialLocation.z)
+//        let image = getImageWithColor(color: .green, size: CGSize(width:100,height:100))
+//        let annotationNode = LocationAnnotationNode(location: location, image: image)
+//
+//        // Add Annotation to Scene
+//        sceneLocationView.addLocationNodeWithConfirmedLocation(locationNode: annotationNode)
+//        print(annotationNode.worldPosition)
+//
+//        let geom = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+//        let geomN = SCNNode(geometry: geom)
+//        geomN.worldPosition = annotationNode.worldPosition
+//        sceneLocationView.scene.rootNode.addChildNode(geomN)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -94,7 +93,7 @@ class ViewControllerARCL: UIViewController {
         
         sceneLocationView.frame = view.bounds
     }
-    
+
 }
 
 

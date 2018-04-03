@@ -406,11 +406,20 @@
                                     <segue destination="BV1-FR-VrT" kind="show" identifier="loadSceneConnection" id="Cdq-cU-jy7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q3e-Rd-EFo">
+                                <rect key="frame" x="8" y="563" width="359" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="startFindGoalHandle:" destination="V5c-Pt-gb6" eventType="touchDown" id="oU4-n1-0Jk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="son-zp-wPT"/>
                     </view>
                     <connections>
+                        <outlet property="startFindGoalButton" destination="q3e-Rd-EFo" id="60i-gP-szS"/>
                         <outlet property="viewAreaARCL" destination="CE4-Dm-8vc" id="Ljd-JT-xVh"/>
                     </connections>
                 </viewController>

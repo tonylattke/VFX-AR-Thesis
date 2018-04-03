@@ -137,4 +137,17 @@ class ViewControllerHome: UIViewController {
         }
     }
 
+    func firstTimeApp() {
+        // Set URL of cache directory
+        let documentsUrl =  FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first! as NSURL
+        // Adding filename DB
+        let documentsPath = documentsUrl.appendingPathComponent(filenameDB)
+        if let dbUrl = documentsPath {
+            do {
+                loadDB()
+            } catch {
+                resetDB()
+            }
+        }
+    }
 }
