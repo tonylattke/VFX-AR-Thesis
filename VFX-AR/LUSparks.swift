@@ -22,16 +22,9 @@ public class LUSparks: LUInteractivObject {
         self.addParticleSystem(particleSystem!)
         particleSystem?.birthRate =  CGFloat(amountOfParticles)
         
+        // Create anchor
         geometry = SCNSphere(radius: 0.1)
-        
-        // Create material
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.cyan
-        material.transparency = 1
-        material.lightingModel = .phong
-        
-        // Assign material
-        geometry?.materials = [material]
+        geometry?.materials = [createPhongMaterial(color: UIColor.cyan)]
         
         optionsSettings["Amount of particles"] = RangeNumber(min: 1000, max: 10000)
     }

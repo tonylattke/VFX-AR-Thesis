@@ -31,8 +31,9 @@ class ViewControllerARCL: UIViewController {
     var currentPostion: CLLocation?
     
     var filenameToLoad: String = ""
-    var flag = true
+    var loadedStartPoint = false
     
+    @IBOutlet weak var distanceLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()

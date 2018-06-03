@@ -105,6 +105,8 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     var currentSelectedAttributeName: String = ""
     var currentSelectedAttributeType: ValueType?
     
+    var currentTextEditorMode: TextEditorMode = .sceneDescription
+    
     // Init
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -162,6 +164,8 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
             appModeControl.selectedSegmentIndex = 2
             appMode = .relocate
             
+            showAlert(message: (baseSessionScene?.description)!)
+            
             print("load mode started")
         }
     }
@@ -172,7 +176,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = .horizontal
+        configuration.planeDetection = [.horizontal, .vertical]
         configuration.worldAlignment = .gravityAndHeading
 
         // Run the view's session
@@ -237,6 +241,8 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
                         let loadedSceneID = jsonData["id"].intValue
                         // - Initial position
                         let loadedBaseInitialPosition = jsonToCLLocation(data: jsonData["initialPosition"])
+                        // - Description
+                        let loadedDescription = jsonData["description"].stringValue
                         // - Marks
                         var loadedBaseMarks = [UUID: LUMark]()
                         for mark in jsonData["marks"].arrayValue {
@@ -251,8 +257,11 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
                         }
                         
                         // Result
-                        baseSessionScene = LUScene(id: loadedSceneID, location: loadedBaseInitialPosition,
-                                                   marks: loadedBaseMarks, objects: loadedBaseObjects)
+                        baseSessionScene = LUScene(id: loadedSceneID,
+                                                   description: loadedDescription,
+                                                   location: loadedBaseInitialPosition,
+                                                   marks: loadedBaseMarks,
+                                                   objects: loadedBaseObjects)
                         
                         // Set Marks as not used
                         for baseMark in (baseSessionScene?.marks)! {

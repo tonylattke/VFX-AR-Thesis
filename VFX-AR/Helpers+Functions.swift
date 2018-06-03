@@ -356,3 +356,13 @@ func calculatePositionOfObject(cameraTransform: matrix_float4x4, distance: Float
     
     return result
 }
+
+// Create a material with a color
+func createPhongMaterial(color: UIColor) -> SCNMaterial {
+    let result: SCNMaterial = SCNMaterial()
+    result.diffuse.contents = color
+    result.transparency = 1
+    result.lightingModel = .phong
+    
+    return result
+}

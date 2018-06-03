@@ -67,6 +67,8 @@ extension ViewControllerVFXAR {
                         let loadedSceneID = jsonData["id"].intValue
                         // - Initial position
                         let loadedBaseInitialPosition = jsonToCLLocation(data: jsonData["initialPosition"])
+                        // - Description
+                        let loadedDescription = jsonData["description"].stringValue
                         // - Marks
                         var loadedBaseMarks = [UUID: LUMark]()
                         for mark in jsonData["marks"].arrayValue {
@@ -81,8 +83,11 @@ extension ViewControllerVFXAR {
                         }
                         
                         // Result
-                        baseSessionScene = LUScene(id: loadedSceneID, location: loadedBaseInitialPosition,
-                                                   marks: loadedBaseMarks, objects: loadedBaseObjects)
+                        baseSessionScene = LUScene(id: loadedSceneID,
+                                                   description: loadedDescription,
+                                                   location: loadedBaseInitialPosition,
+                                                   marks: loadedBaseMarks,
+                                                   objects: loadedBaseObjects)
                         
                         for baseMark in (baseSessionScene?.marks)! {
                             markIdTable[baseMark.key] = nil
@@ -107,6 +112,10 @@ extension ViewControllerVFXAR {
     
     // Write
     @IBAction func saveButtonTouchDown(_ sender: UIButton) {
+        showTextEditor()
+    }
+    
+    func saveScene(description: String) {
         if currentLUScene.positionGPS != nil {
             // Coding marks
             var marksJSON: [JSON] = []
@@ -135,6 +144,7 @@ extension ViewControllerVFXAR {
             let json: JSON =  [
                 "id": currentLUScene.id,
                 "initialPosition": CLLocationToJSON(location: currentLUScene.positionGPS!),
+                "description": description,
                 "marks": marksJSON,
                 "objects": objectsJSON
             ]
@@ -208,7 +218,14 @@ extension ViewControllerVFXAR {
     
     // Save edited text button handler
     @IBAction func editTextSaveHandle(_ sender: UIButton) {
-        selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: textField.text!)
+        switch currentTextEditorMode {
+        case .attributeEditor:
+            selectedObject?.updateAttribute(name: currentSelectedAttributeName, value: textField.text!)
+        case .sceneDescription:
+            saveScene(description: textField.text!)
+        }
+        
+        currentTextEditorMode = .sceneDescription
         
         currentSelectedAttributeName = ""
         currentSelectedAttributeType = nil
@@ -216,7 +233,8 @@ extension ViewControllerVFXAR {
         hideTextEditor()
         updateUIStatus(title: "Edit Object")
         
-        self.view.endEditing(true)
+        
+        self.view.endEditing(true) // Hide Keyboard
     }
     
     // Cancel edited text button handler

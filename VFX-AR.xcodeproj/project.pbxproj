@@ -337,7 +337,6 @@
 				8CCC53781FC361C600EC410C /* Frameworks */,
 				8CCC53791FC361C600EC410C /* Resources */,
 				76C8E1999A33BE84619D71D5 /* [CP] Embed Pods Frameworks */,
-				2CF7411E40D457A8BDAB4DCE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -356,8 +355,6 @@
 				8CCC538D1FC361C600EC410C /* Sources */,
 				8CCC538E1FC361C600EC410C /* Frameworks */,
 				8CCC538F1FC361C600EC410C /* Resources */,
-				7992534EC737857761B9DD92 /* [CP] Embed Pods Frameworks */,
-				141F508DBE7F2EEFFDBA5469 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -377,8 +374,6 @@
 				8CCC53981FC361C600EC410C /* Sources */,
 				8CCC53991FC361C600EC410C /* Frameworks */,
 				8CCC539A1FC361C600EC410C /* Resources */,
-				1881ABD42C85C7D22A255B41 /* [CP] Embed Pods Frameworks */,
-				18B6941165E3AC46E40441BD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -483,66 +478,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		141F508DBE7F2EEFFDBA5469 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1881ABD42C85C7D22A255B41 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		18B6941165E3AC46E40441BD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARUITests/Pods-VFX-ARUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		2CF7411E40D457A8BDAB4DCE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		76C8E1999A33BE84619D71D5 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,21 +500,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-AR/Pods-VFX-AR-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		7992534EC737857761B9DD92 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-VFX-ARTests/Pods-VFX-ARTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		7FF8070AD248665F9B3201CD /* [CP] Check Pods Manifest.lock */ = {
@@ -827,6 +747,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PETS3Y3UCQ;
 				INFOPLIST_FILE = "VFX-AR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -843,6 +764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PETS3Y3UCQ;
 				INFOPLIST_FILE = "VFX-AR/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "de.hsb.VFX-AR";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -40,6 +40,6 @@ extension ViewControllerARCL {
         geomN2.worldPosition = annotationNode2.worldPosition
         sceneLocationView.scene.rootNode.addChildNode(geomN2)
         
-        flag = false
+        loadedStartPoint = true
     }
 }

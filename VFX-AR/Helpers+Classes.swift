@@ -39,6 +39,12 @@ public enum InteractionAxis:Int {
     case z = 3
 }
 
+// Text editor mode
+public enum TextEditorMode:Int {
+    case attributeEditor = 0
+    case sceneDescription = 1
+}
+
 // SceneInfo
 public class SceneInfo {
     let id: Int

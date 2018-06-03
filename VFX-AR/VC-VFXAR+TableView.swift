@@ -137,6 +137,7 @@ extension ViewControllerVFXAR: UITableViewDelegate, UITableViewDataSource {
                 case "String":
                     updateUIStatus(title: "Edit - Text")
                     textField.text = selectedObject?.getValue(attributeName: currentSelectedAttributeName)
+                    currentTextEditorMode = .attributeEditor
                     showTextEditor()
                 case "Float":
                     if let rangeNumber = currentSelectedAttributeType as? RangeNumber {

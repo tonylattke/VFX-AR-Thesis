@@ -15,19 +15,12 @@ public class LU3DModel: LUInteractivObject {
     init(transform: simd_float4x4) {
         super.init(className: "LU3DModel", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
         
+        // Create anchor
         geometry = SCNSphere(radius: 0.1)
+        geometry?.materials = [createPhongMaterial(color: UIColor.cyan)]
         
         let shipScene = SCNScene(named: "ship.scn", inDirectory: "art.scnassets", options: nil)!
         self.addChildNode(shipScene.rootNode)
-        
-        // Create material
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.magenta
-        material.transparency = 1
-        material.lightingModel = .phong
-        
-        // Assign material
-        geometry?.materials = [material]
     }
     
     // Init - Default coder

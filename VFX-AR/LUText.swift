@@ -20,16 +20,9 @@ public class LUText: LUInteractivObject {
         
         super.init(className: "LUText", transform: transform, pivot: SCNMatrix4ToSimd_float4x4(sourceMatrix: SCNMatrix4Identity))
         
+        // Anchor
         geometry = SCNSphere(radius: 0.1)
-        
-        // Create material
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.yellow
-        material.transparency = 1
-        material.lightingModel = .phong
-        
-        // Assign material
-        geometry?.materials = [material]
+        geometry?.materials = [createPhongMaterial(color: UIColor.yellow)]
         
         optionsSettings["Edit Text"] = ValueType(name: "String", rangeType: "None")
     }
