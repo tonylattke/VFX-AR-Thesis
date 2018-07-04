@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5S2-Rh-PIr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5S2-Rh-PIr">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -135,6 +135,14 @@
                                     <action selector="apModeControlChangeValueHandle:" destination="BV1-FR-VrT" eventType="valueChanged" id="fId-Jc-hk5"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PMX-41-Gfn">
+                                <rect key="frame" x="165" y="600" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="handleDeleteButton:" destination="BV1-FR-VrT" eventType="touchDown" id="sbo-TC-Wgp"/>
+                                </connections>
+                            </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k00-rG-22Z">
                                 <rect key="frame" x="16" y="64" width="351" height="603"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -323,6 +331,7 @@
                         <outlet property="cancelTextButton" destination="TwM-kI-HjI" id="ob3-Fe-VJ1"/>
                         <outlet property="cancelTransformAxisViewButton" destination="Wsz-Uf-ZEL" id="gxC-ea-Wte"/>
                         <outlet property="checkBaseMarkButton" destination="1d5-Ng-4RJ" id="cmN-aU-eG7"/>
+                        <outlet property="deleteObjectButton" destination="PMX-41-Gfn" id="Dcs-fQ-KMz"/>
                         <outlet property="effectsMenu" destination="AJf-0q-Js8" id="RvN-FQ-xSu"/>
                         <outlet property="leadingConstraintLeft" destination="Akt-QK-hkC" id="k26-4L-hKM"/>
                         <outlet property="leadingConstraintRight" destination="3iO-cx-Gny" id="k0D-QR-BCb"/>

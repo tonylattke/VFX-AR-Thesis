@@ -295,4 +295,34 @@ extension ViewControllerVFXAR {
         updateUIStatus(title: "Edit Object")
     }
     
+    // Delete an selected Object
+    @IBAction func handleDeleteButton(_ sender: UIButton) {
+        if selectedObject != nil {
+            // Remove of LUScene
+            var i = 0
+            while i < currentLUScene.objects.count {
+                if currentLUScene.objects[i] == selectedObject! {
+                    currentLUScene.objects.remove(at: i)
+                    break
+                } else {
+                    i = i + 1
+                }
+            }
+            
+            // Remove of Scene
+            i = 0
+            while i < mainNodeScene.childNodes.count {
+                if mainNodeScene.childNodes[i] == selectedObject! {
+                    mainNodeScene.childNodes[i].removeFromParentNode()
+                    break
+                } else {
+                    i = i + 1
+                }
+            }
+            
+            selectedObject = nil
+            setIdleModeUI()
+        }
+    }
+    
 }

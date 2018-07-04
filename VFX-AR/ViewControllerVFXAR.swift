@@ -59,6 +59,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
     @IBOutlet weak var readButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     @IBOutlet weak var appModeControl: UISegmentedControl!
+    @IBOutlet weak var deleteObjectButton: UIButton!
     
     @IBOutlet weak var transformAxisView: UIView!
     @IBOutlet weak var axisModeControl: UISegmentedControl!
@@ -176,7 +177,7 @@ class ViewControllerVFXAR: UIViewController, ARSCNViewDelegate {
         
         // Create a session configuration
         let configuration = ARWorldTrackingConfiguration()
-        configuration.planeDetection = [.horizontal, .vertical]
+        configuration.planeDetection = [.horizontal]// , .vertical
         configuration.worldAlignment = .gravityAndHeading
 
         // Run the view's session
